@@ -1,31 +1,5 @@
-
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>重定向 Redirecting…</title>
-        <link rel="canonical" href="https://discord.gg/NHNexhA">
-    </head>
-    <body>
-        <h1><a id="time"></a></h1>
-        <script type="text/javascript">
-            var t = 1; //設定倒數秒數
-
-            //顯示倒數秒收
-            function showTime() {
-                t -= 1;
-                document.getElementById("time").innerHTML = '重定向 Redirecting… ' + t + 's';
-
-                if(t == 0) {
-                    location.href = "https://discord.gg/NHNexhA";
-                    document.getElementById("time").innerHTML = '<a href="https://discord.gg/NHNexhA">如果你沒有重定向，點擊這裡。 Click here if you are not redirected.</a>';
-                    return false;
-                }
-
-                setTimeout("showTime()",1000); //每秒執行一次 showTime()
-            }
-
-            showTime(); //執行showTime()
-        </script>
-    </body>
+<head>
+<meta http-equiv="refresh" content="0;url=https://discord.gg/NHNexhA">
+</head>
 </html>
