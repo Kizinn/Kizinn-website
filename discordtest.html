@@ -1,0 +1,179 @@
+<html>
+<body>
+<div class="contentvoting">
+
+            <style>
+              @import url('https://fonts.googleapis.com/css?family=Rajdhani:700');
+              @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+              .medalvotingad {
+                background-color: #17181A;
+                border-radius: 3px!important;
+                margin-bottom: 40px;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+                padding: 10px;
+                color: #99AAB5;
+                padding-top: 20px;
+              }
+
+              .medal-replay-link {
+                font-family: 'Karla', sans-serif;
+                color: white;
+                background: #667ED5;
+                border-radius: 3px;
+                font-weight: bold;
+                padding: 10px;
+                font-size: 15px;
+                display: block;
+                margin: auto;
+                width: 400px;
+                text-align: center;
+                margin-bottom: 10px;
+                margin-top: 35px;
+                transition: 0.2s;
+              }
+
+              .medal-replay-link:hover {
+                transform: translateY(20, 10);
+                color: #667ED5;
+                background-color: white;
+                font-size: 16px;
+              }
+
+              .medal-gradient {
+                background: linear-gradient(0deg, #FFCA49 0%, #FF8A17 100%)!important;
+                -webkit-background-clip: text!important;
+                color: transparent!important;
+                -webkit-text-fill-color: transparent!important;
+                font-weight: 900;
+
+                font-size: 18px;
+                margin-bottom: 10px;
+              }
+
+              .monitor {
+                border-color: #E2E8F2!important;
+                width: 440px;
+                height: 270px;
+                overflow-y: scroll;
+                border: solid 5px;
+                #E2E8F2;
+                border-radius: .5em;
+                background-color: #E2E8F2;
+                overflow: hidden;
+                margin-top: 40px;
+              }
+
+
+
+              #vid {
+                display: block;
+                height: 230px;
+                margin-top: 13px;
+
+              }
+
+              .stand:before {
+                content: "";
+                display: block;
+                position: relative;
+                background: #222;
+                width: 150px;
+                height: 50px;
+                left: 175px!important;
+                top: 320px!important;
+                background-color: #CDD2E1;
+                width: 100px;
+              }
+
+              .stand:after {
+                content: "";
+                display: block;
+                position: relative;
+                background: #333;
+                border-top-left-radius: .5em;
+                border-top-right-radius: .5em;
+                width: 300px;
+                height: 15px;
+                top: 50px;
+                left: 75px!important;
+                background-color: #E2E8F2;
+              }
+
+              #wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 280px;
+                margin-bottom: 100px;
+                margin-top: 30px;
+
+              }
+
+              .text-ad {
+                color: #98999A;
+                display: block;
+              }
+
+              .medalvotingad p {
+                margin-top: 20px;
+              }
+
+              #top__image {
+                width: 500px;
+              }
+
+              @media only screen and (max-width: 542px) {
+                .medal-replay-link {
+                  width: unset;
+                }
+              }
+            </style>
+
+            <!-- <div id="medal" class="medalvotingad" style="display:none">
+              <p>
+                Clip your gameplay and share on Discord.
+                  
+              </p>
+              <a class="medal-replay-link" href="https://medal.tv/?ref=dblvote">
+                Download for Windows
+                  
+              </a>
+              <div id="wrapper">
+                <div id="top__image"></div>
+              </div>
+            </div> -->
+
+            <div id="totalContent" style="display:block">
+              <div class="votingbotpp">
+                <img src="https://images.discordapp.net/avatars/506843065424543745/d0ef9b4bb61e1861d8117584c3a06a31.png?size=512">
+              </div>
+              <p class="botname">
+                Kizinn
+              </p>
+              <span id="votingvotes" class="votingvotes btn btn-orange btn-1xx" style="cursor: vertical-text!important;">Your vote will only count once every 12 hours.</span>
+              <div class="votingbutton"><span id="votingvoted" class="voting btn btn-orange btn-4x" style="cursor: pointer!important;" onclick="upvote('506843065424543745', this)">Vote for this bot</span>
+                <div><span id="unsub" style="padding: 10px;padding-left: 14px;padding-right: 14px; font-size: 12px;margin-top: 10px;cursor:pointer;display:none;" class="voting btn" onclick="unsub('506843065424543745')">Unsubscribe from reminders</span></div>
+              <div class="reminder" id="reminder" style="display:none;">
+                <p style="margin-bottom: 10px;">Thanks for voting!</p>
+                <p style="font-size: 22px;">Should we remind you when you can vote for this bot again?</p>
+                <span id="votingvoted" style="padding: 10px;padding-left: 14px;padding-right: 14px; font-size: 18px;margin-top: 10px;cursor:pointer" class="voting btn btn-orange btn-4x" onclick="remindMe('506843065424543745')">Yes, remind me</span>
+                <span id="votingvoted" style="padding: 10px;padding-left: 14px;padding-right: 14px; font-size: 14px;margin-top: 10px;cursor:pointer" class="voting btn" onclick="dontRemindMe('506843065424543745')">No</span>
+                <div style="margin-top:10px;"><input type="checkbox" id="rememberReminder"> Remind me everyday</div>
+              </div>
+              <div class="successful-reminder" id="successful-reminder" style="display:none;">
+                <p style="margin-bottom: 10px;">Thanks for voting!</p>
+                <p style="font-size: 22px;">Awesome! We'll remind you when you can vote for this bot again :)</p>
+              </div>
+              <div class="failure-reminder" id="failure-reminder" style="display:none;">
+                <p style="margin-bottom: 10px;">Thanks for voting!</p>
+                <p style="font-size: 22px;">Uh oh! We think you might have blocked browser notifications for our site, enable them and try again.</p>
+              </div>
+              <div class="no-reminder" id="no-reminder" style="display:none;">
+                <p style="margin-bottom: 10px;">Thanks for voting!</p>
+                <p style="font-size: 22px;">Okay, we won't remind you</p>
+              </div>
+              </div>
+            </div>
+          </div>
+       </body>
+</html>
