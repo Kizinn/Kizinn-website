@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <title>Discord Servers | Discord Server List</title>
+    <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="no" />
+    <meta name="theme-color" content="#7289DA" />
+    <script src="cdn-cgi/apps/head/-MZfg_LPbppfNWUAJBnzeqNlz5k.js"></script><link rel="icon" href="servers/favicon.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' type="text/css" href='servers/css/auto.main.lite.css' />
+    <link rel='stylesheet' type="text/css" href='servers/css/hover.css' />
+    <link rel="stylesheet" type="text/css" href="cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link rel='stylesheet' type="text/css" href='cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.css' />
+    <link rel='stylesheet' type="text/css" href='cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.css' />
+    <script src="ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <meta name="twitter:title" content="Discord Servers | Discord Server List" />
+            <meta itemprop="name" content="Discord Servers | Discord Server List">
+            <meta property="og:title" content="Discord Servers | Discord Server List">
+        <meta itemprop="description" content="Find servers you&#39;re interested in and meet new friends">
+        <meta itemprop="image" content="servers/favicon.png">
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" value="https://discordbots.org/servers" />
+        <meta name="twitter:title" content="Discord Servers | Discord Server List" />
+        <meta name="twitter:description" content="Find servers you&#39;re interested in and meet new friends" />
+        <meta name="twitter:image" content="servers/favicon.png">
+        <meta property="og:url" content="https://discordbots.org/servers">
+        <meta property="og:image" content="servers/favicon.png" />
+        <meta property="og:description" content="Find servers you&#39;re interested in and meet new friends">
+        <meta property="og:site_name" content="Discord Servers">
+        <meta name="description" content="Find servers you&#39;re interested in and meet new friends" />
+</head>
+<body>
+<input id="custom-context-input" value="https://discordbots.org/servers" style="opacity:0;position:absolute;left:0;top:0;z-index:-20200"/>
+<div class="custom-context">
+    <ul>
+        <li class="new-tab">Open link in new tab</li>
+        <li class="new-window">Open link in new window</li>
+        <li class="splitter"></li>
+        <li class="copy-address">Copy link address</li>
+    </ul>
+</div>
+<a class="medal-ad-banner" href="https://medal.tv/?ref=dslbanner">
+    Record gaming clips with Medal.tv! <i class="windows icon"></i>
+    <div class="download-button">Download</div>
+</a>
+<div class="tooltip"></div>
+<section class="page" id="home-page">
+  <div class="shapes-background shapes-1"></div>
+  <div class="shapes-background shapes-2"></div>
+  <div class="shapes-background shapes-3"></div>
+  <article>
+    <nav class="is-widescreen is-mobile"  id="menu">
+  <style>
+    @media only screen and (max-width: 600px) {
+      .alert {
+        display: none!important;
+      }
+    }
+  </style>
+  <input type="checkbox" id="show-menu">
+  <label id="menu-trigger" for="show-menu">
+    <span class="menu-bar menu-bar-1 white"></span>
+    <span class="menu-bar menu-bar-2 white"></span>
+    <span class="menu-bar menu-bar-3 white"></span>
+  </label>
+  <a class="logo mainLOGO" id="home" href="servers.html"><img src="servers/images/serverbot.svg" alt="Discord Server List" title="Discord Server List"></a>
+  <div class="menu container" >
+    <ul>
+      <li> <a class="logo navLOGO" id="home" href="servers.html"><img src="servers/images/serverbot.svg" alt="Discord Server List" title="Discord Server List"></a></li>
+      <li><span style="cursor:pointer" onclick="outlinkDuplicate('/servers/')">Home</span></li>
+      <li><a target="_blank" href="https://medium.com/discord-bots">Blog</a></li>
+      <li><a target="_blank" href="index.html">Discord Bots</a></li>
+      <li><a target="_blank" href="https://discord.gg/pFPrbyq">Join Our Discord</a></li>
+      <li><a href="https://discordapp.com/oauth2/authorize?client_id=422087909634736160&redirect_uri=https://discordbots.org/servers/login&response_type=code&scope=identify&state=L3NlcnZlcnMvbmV3">Add Your Server</a></li>
+        <li><a href="https://discordapp.com/oauth2/authorize?client_id=422087909634736160&redirect_uri=https://discordbots.org/servers/login&response_type=code&scope=identify&state=L3NlcnZlcnM=">Login</a></li>
+    </ul>
+  </div>
+</nav>
+  <header >
+      <div class="container is-widescreen">
+          <div class="columns is-tablet">
+              <div class="column is-two-thirds">
+                  <h1 id="botlistitle">Discord Servers</h1>
+                  <h2>Find servers you&#39;re interested in and meet new friends</h2>
+                  <div class="input-with-btn">
+                    <input class="mainsearch" type="search" placeholder="Anime, PUBG, Fortnite, Memes..." value="">
+                    <button class="btn" onClick="search(this)">Search</button>
+                  </div>
+                  <div class="holder">
+                      <div class="expandedsearchres" id="searchopts">
+                          <div id="searchoptionlist">
+                              <p id="expandedsearchtitle">Search Options</p>
+                              <p onclick="fillsearch('tag:')">tag: <span class="expandedsearchexample">category</span></p>
+                          </div>
+                          <div id="searchtaglist">
+                          </div>
+                          <div id="searchliblist">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="featuredbuttonss">
+                      <a href="servers/list/top.html" id="tag-top">
+                          <button href="servers/list/top.html" class="ui colorr button ">
+                              <i class="list layout icon"></i>
+                              Top
+                          </button>
+                      </a>
+                      <a href="servers/tag/gaming.html" id="tag-gaming">
+                          <button href="servers/tag/gaming.html" class="ui colorr button">
+                              <i class="game icon"></i>
+                              Gaming
+                          </button>
+                      </a>
+                      <a href="servers/tag/pubg.html" id="tag-gaming">
+                          <button href="servers/tag/pubg.html" class="ui colorr button">
+                              <i class="game icon"></i>
+                              PUBG
+                          </button>
+                      </a>
+                      <a href="servers/tag/fortnite.html" id="tag-gaming">
+                          <button href="servers/tag/fortnite.html" class="ui colorr button">
+                              <i class="game icon"></i>
+                              Fortnite
+                          </button>
+                      </a>
+                      <a href="servers/list/new.html" id="tag-new">
+                          <button class="ui colorr button ">
+                              <i class="wizard icon"></i>
+                              New
+                          </button>
+                      </a>
+                      <a href="servers/tags.html" id="tag-explore">
+                          <button href="servers/tags.html" class="ui colorr button ">
+                              <i class="tags icon"></i>
+                              More Tags
+                          </button>
+                      </a>
+                  </div>
+              </div>
+              <div class="column">
+                  <div id="illustration"><img src="servers/images/server_img.svg"></div>
+              </div>
+          </div>
+      </div>
+  </header>
+<!--
+  <div class="alert">
+    <i class="heart icon"></i> Alert box
+  </div>
+-->
+    <div id="bots">
+        <div class="container is-fullhd">
+          <div onclick="outlinkDuplicate('/servers-list-top')" style="cursor:pointer" class="section-title is-flex">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR5SURBVHhe7ZztTxxFHMdRE/8BfWf0T/CVb33T2yuye6bn7SxXjjZao2gxBItJQVvvQtoY2/RBDdoWPSVR+wBogzFE24LKVaiF0oeEWhM1bVp8YWJMg9bgA+PO3tztzt0s5O7Y69z1+0k+IWFnf5mZT+AFvbQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBtY1nWPZpOkrYTmmHOKCnbm71Htle+7fpF081dYYPQWpDtlW+7fgkb5pzs8GpqzvFt1y9h3bwmP7yC2nvl265fZEGeiD9ZbHMrjVotwUnWF1m4rzsySNsLXVTG4m+n6V+/DAfiwrUj9NfL6SKffmYTgiDIbQZBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANBFANByiCVSt2tNZmP2JuyylXTzZgWsR7iI/MgSOncZV/mUWFjZWrP+dc+1AY+1wFBSmTN4+bDwqYq1I7yMx/tgCAlEtKJIWyqQhOtLXR+Znve9YkW4TmCrMBqBmmMEDqU7kCQSpAFSe3YTb/JTDqOnxympz7bv6InPt1JL411CzEQpAxkQca+yvBrovSfhSvSQxZ686d3i2IgSBnUWpA/bwzRM+Nv0+mvD9Bb8/I1hSJIQEFuzQ/Rnp6O/KzurR1OINlarwgSUJDZiQPCLOa5iYPStV4RJKAgRwZ2CrOYXxzfK13rFUFWMQj7lTR5qo8O9Pc6n2L3zmIiiI9BBUm++qLwfqEI4mMQQS5Pvye8KxNBfAwiyBUEyarSr6y9u7uF9wtFEB+DCsL8cfYDOjXWRw/1JYVZzCCDWJZ1r6aTbZpBRsM6OVmyhjllf70e1mMXH4uYIT52eWohSE52+d5ZzCCD2DEGhOcVyP6tKBKJ3M9H+4Mg7qwoif/xfWbHhzmNaPOi93mlNjbFOvm1+4Mg7iwrHqezo115n3u2VXheqaEmkuDX7g+CuLMKg4wPdtL25zfQpnXNwrpyZXfNr92fWgpyIXNQmMW89G2/dK3XcoPkvHp2n/T95Tz+UfGfeeouCDOV3JKf1Zvqcv4CLFvnFUECDML8YSZt+770mUwECThIqSIIgqgb5KlNCWF250uv8MkiCMIJOsj+19qE2YePfcIniyAIJ+gg16e303f2bKZbX+7+e3B4hC4tLfHJIgjCCTpIzsWbc7/zkVIQhIMg7rkRxAOCcBDEPTeCeEAQDoK450YQDwjCQRD33AjiAUE4COKe+7YGWbsu/mDIiGmaHttW+GJ64GN67vxFx7OTnzsfwVnJzOjr9MTgFl+nMiMLuZkyv5s4LJ27Gp7+8g06PrKryMTGjcK5o6SZHjvUXuTo0aT0/eV8a0/x58nYXbM7Z3fPM2QJG2Zv4WJYbc1eJ0YoGr1P083/5ItgtWQNWIuGNQZ5QLYAVl/Wwvkp0XSSli2A1ZM1cGIw2P9t0miYj641rLasZLPtPs0gb4Z10u5+/w5Qt3rCEdLPPsMrfV6B7C7ZnbK7zd5x9vvs7lkDngMAAAAAAAAAqkhDw/9ZzaWwlijqnQAAAABJRU5ErkJggg==" style="height:55px;width:55px;" alt="Most Visited Servers" title="Most Visited Servers">
+            <span><h4>Top Discord Servers</h4><p>The most visited and most popular Discord servers</p></span>
+          </div>
+          <div class="bot-list-section">
+              <ul class="columns is-tablet">
+        <li class="medalCard column bot-card is-one-fourth">
+            <div class="content medalSponsor">
+                <div class="guildCardSplash"><div class="image" style="background-image:url('servers/images/medal_graphic.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <a title="Verified Discord Server" onclick="window.location.href = 'https://medal.tv/?ref=dslcard'">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#ff9220;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#f99221" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#f99221" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                        </a>
+                        <div class="bot-img">
+                            <img onclick="window.location.href = 'https://medal.tv/?ref=dslcard'"
+                                 style="cursor:pointer" alt="Medal.tv Icon"
+                                 src="cdn.discordapp.com/avatars/307998818547531777/1fa1e4495fcbd0ef03d1b62d6ccd6cb2.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <br>
+                    <br>
+                    <br>
+                    <a class="bot-name" id="guild-" href="https://medal.tv/?ref=dslcard">Medal.tv</a>
+                    <p class="bot-description --isMobile">Watch gaming clips on your phone!</p>
+                    <p class="bot-description --isDesktop">Record gaming clips and send them to your phone!</p>
+                    <span class="lib">Featured, Fortnite, PUBG</span>
+                </div>
+                <div class="bottom is-flex bot-btns">
+                    <span onclick="window.location.href = 'https://medal.tv/?ref=dslcard'" class="color-medium-blue btn medal-downloader">Download</span>
+                </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content  hasSplash ">
+                    <div class="guildCardSplash"><div class="image" style="background-image:url('cdn.discordapp.com/splashes/393088095840370689/4d642b2982a446cf257ea9e3a8b8cfde.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-393088095840370689')"
+                 style="cursor:pointer" alt="PUBG Mobile Icon"
+                 src="cdn.discordapp.com/icons/393088095840370689/c2495a29dbf25511ff67341d7bc57a35.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  250,002 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  51 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-393088095840370689" href="servers/393088095840370689.html">PUBG Mobile</a>
+                    <p class="bot-description">WINNER WINNER CHICKEN DINNER</p>
+                    <span class="lib">
+                            Gaming, PUBG
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/393088095840370689" onclick="outlinkDuplicate('/servers-393088095840370689')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-393088095840370689')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-461754875932311552')"
+                 style="cursor:pointer" alt="FN Player League Icon"
+                 src="https://cdn.discordapp.com/icons/461754875932311552/376f01cc55e8da947585855ab5655498.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  141,282 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  53 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-461754875932311552" href="servers/461754875932311552.html">FN Player League</a>
+                    <p class="bot-description">Competitive Fortnite Community. Become the best player. Practice in our constant scrim snipes and prove your worth in our biweekly league.</p>
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/461754875932311552" onclick="outlinkDuplicate('/servers-461754875932311552')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-461754875932311552')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content  hasSplash ">
+                    <div class="guildCardSplash"><div class="image" style="background-image:url('cdn.discordapp.com/splashes/290843998296342529/aa8cc2ab9abc245e4b971f440dca0556.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-290843998296342529')"
+                 style="cursor:pointer" alt="Anime Base (WLA) Icon"
+                 src="cdn.discordapp.com/icons/290843998296342529/76ae77368558cc50a350d4e4b3e22bcc.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  100,913 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  100 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-290843998296342529" href="servers/290843998296342529.html">Anime Base (WLA)</a>
+                    <p class="bot-description">Anime Forum and Anime Discord - Your Anime Base, with 100,000+ members, We Love Anime ♥</p>
+                    <span class="lib">
+                            Anime, Gaming
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/290843998296342529" onclick="outlinkDuplicate('/servers-290843998296342529')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-290843998296342529')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+              </ul>
+              <ul class="columns is-tablet">
+        <li class="column bot-card is-one-fourth">
+            <div class="content  hasSplash ">
+                    <div class="guildCardSplash"><div class="image" style="background-image:url('cdn.discordapp.com/splashes/519203887492890627/656b23055138ad170a0f31d0e9f84d53.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-519203887492890627')"
+                 style="cursor:pointer" alt="ATLAS Icon"
+                 src="cdn.discordapp.com/icons/519203887492890627/7bd9ca0f4074175f276e0d70ff906d8f.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  60,700 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  40 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-519203887492890627" href="servers/519203887492890627.html">ATLAS</a>
+                    <p class="bot-description">A friendly and active community for the game ATLAS! Talk to other pathfinders &amp; rule the ATLAS!</p>
+                    <span class="lib">
+                            Gaming, Social
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/519203887492890627" onclick="outlinkDuplicate('/servers-519203887492890627')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-519203887492890627')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content  hasSplash ">
+                    <div class="guildCardSplash"><div class="image" style="background-image:url('cdn.discordapp.com/splashes/263785005333872640/b43c52d8be07dfb257c0ec5cbefb67af.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-263785005333872640')"
+                 style="cursor:pointer" alt="Alternate Reality Games (ARG) Icon"
+                 src="cdn.discordapp.com/icons/263785005333872640/ce024d3ae5f3917fc1c9cf9b21d90194.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  5,098 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  15 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-263785005333872640" href="servers/263785005333872640.html">Alternate Reality Games (ARG)</a>
+                    <p class="bot-description">Gaming community around ARG, hacking and puzzles</p>
+                    <span class="lib">
+                            Gaming, Social
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/263785005333872640" onclick="outlinkDuplicate('/servers-263785005333872640')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-263785005333872640')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                          <a title="Verified Discord Server" onclick="outlinkDuplicate('/servers-list-verified')">
+                            <svg class="verifiedIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 252 252" style="fill:#7289da;"><g transform="translate(13.482,13.482) scale(0.893,0.893)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#7289da" stroke="#ffffff" stroke-width="27" stroke-linejoin="round"><path d="M229.4145,146.1705c4.893,15.0885 -1.911,31.5 -16.0335,38.7135l-18.8685,9.639l-9.639,18.8685c-7.2135,14.1225 -23.625,20.916 -38.7135,16.0335l-20.16,-6.531l-20.1705,6.5205c-15.0885,4.893 -31.5,-1.911 -38.7135,-16.0335l-9.639,-18.8685l-18.8685,-9.639c-14.1225,-7.2135 -20.916,-23.625 -16.0335,-38.7135l6.531,-20.16l-6.531,-20.16c-4.8825,-15.0885 1.911,-31.5 16.0335,-38.7135l18.8685,-9.6495l9.6495,-18.8685c7.2135,-14.1225 23.625,-20.916 38.7135,-16.0335l20.16,6.531l20.1705,-6.5205c15.0885,-4.893 31.5,1.911 38.7135,16.0335l9.639,18.8685l18.8685,9.639c14.1225,7.2135 20.916,23.625 16.0335,38.7135l-6.531,20.16zM122.9235,164.9235l55.5765,-55.5765c4.095,-4.095 4.095,-10.752 0,-14.847c-4.095,-4.095 -10.752,-4.095 -14.847,0l-48.153,48.153l-16.653,-16.653c-4.095,-4.095 -10.752,-4.095 -14.847,0c-4.095,4.095 -4.095,10.752 0,14.847l24.0765,24.0765c4.095,4.095 10.752,4.095 14.847,0z"></path></g><path d="M0,252v-252h252v252z" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path><g fill="#7289da" stroke="none" stroke-width="1" stroke-linejoin="miter"><path d="M222.894,126l6.531,-20.16c4.8825,-15.0885 -1.911,-31.5 -16.0335,-38.7135l-18.8685,-9.639l-9.639,-18.8685c-7.2135,-14.1225 -23.625,-20.9265 -38.7135,-16.0335l-20.1705,6.5205l-20.16,-6.531c-15.0885,-4.8825 -31.5,1.911 -38.7135,16.0335l-9.6495,18.8685l-18.8685,9.6495c-14.1225,7.2135 -20.916,23.625 -16.0335,38.7135l6.531,20.16l-6.531,20.16c-4.8825,15.0885 1.911,31.5 16.0335,38.7135l18.8685,9.639l9.639,18.8685c7.2135,14.1225 23.625,20.9265 38.7135,16.0335l20.1705,-6.5205l20.16,6.531c15.0885,4.8825 31.5,-1.911 38.7135,-16.0335l9.639,-18.8685l18.8685,-9.639c14.1225,-7.2135 20.9265,-23.625 16.0335,-38.7135zM108.0765,164.9235l-24.0765,-24.0765c-4.095,-4.095 -4.095,-10.752 0,-14.847v0c4.095,-4.095 10.752,-4.095 14.847,0l16.653,16.653l48.153,-48.153c4.095,-4.095 10.752,-4.095 14.847,0v0c4.095,4.095 4.095,10.752 0,14.847l-55.5765,55.5765c-4.095,4.095 -10.752,4.095 -14.847,0z"></path></g><path d="" fill="none" stroke="none" stroke-width="1" stroke-linejoin="miter"></path></g></g></svg>
+                          </a>
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-343572980351107077')"
+                 style="cursor:pointer" alt="Plexi Development Icon"
+                 src="cdn.discordapp.com/icons/343572980351107077/de5c22fbbf8e48bf1f24df0369a4e8cb.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  4,969 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  74 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-343572980351107077" href="servers/343572980351107077.html">Plexi Development</a>
+                    <p class="bot-description">Want to create a Discord Bot but don&#39;t know where to start? We have the best place for you to find resources, tutorials, and a community!</p>
+                    <span class="lib">
+                            Developer, Social
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/343572980351107077" onclick="outlinkDuplicate('/servers-343572980351107077')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-343572980351107077')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content dslPartnered  ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-497834650274889749')"
+                 style="cursor:pointer" alt="Guilded Icon"
+                 src="cdn.discordapp.com/icons/497834650274889749/34511b39cd151d4c9105827f229b8dae.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  6,854 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  34 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-497834650274889749" href="servers/497834650274889749.html">Guilded</a>
+                    <p class="bot-description">The official Discord server for Guilded.gg. Fortnite scrims on PC, PS4, and Xbox One; LFG &amp; scrims for R6 Siege, Destiny 2, OW &amp; more.</p>
+                    <span class="lib">Featured</span>,
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/497834650274889749" onclick="outlinkDuplicate('/servers-497834650274889749')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-497834650274889749')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+              </ul>
+               <div style="width:100%;text-align:center;margin-bottom: -50px; margin-top: 15px;">
+                    <div style="margin: auto;height:90px;" id='cdm-zone-01'>
+                        <!-- discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                        <div class="vm-placement" data-id="5b608e9746e0fb0001318a60"></div>
+                        <!-- / discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                    </div>
+                </div>
+          </div>
+        </div>
+        <div class="container is-fullhd">
+          <div onclick="outlinkDuplicate('/servers-tag-fortnite')" style="cursor:pointer" class="section-title is-flex">
+            <img src="d1u5p3l4wpay3k.cloudfront.net/fortnite_gamepedia/6/64/Favicon.ico" style="height:55px;width:55px;" alt="Fortnite Discord Servers" title="Fortnite Discord Servers">
+            <span><h4>Fortnite Discord Servers</h4><p>A selection of servers related to the popular game Fortnite</p></span>
+          </div>
+          <div class="bot-list-section">
+              <ul class="columns is-tablet">
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-285894122349527040')"
+                 style="cursor:pointer" alt="ProSettings.com Icon"
+                 src="cdn.discordapp.com/icons/285894122349527040/13074cb7aea2ec1bbb5bf5ac9d7addae.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  100,122 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  8 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-285894122349527040" href="servers/285894122349527040.html">ProSettings.com</a>
+                    <p class="bot-description">ProSettings is all about gaming. We host pro scrims and solo snipes for Fortnite and other games!</p>
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/285894122349527040" onclick="outlinkDuplicate('/servers-285894122349527040')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-285894122349527040')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-338579629201817601')"
+                 style="cursor:pointer" alt="D7 Army 🐐 Icon"
+                 src="cdn.discordapp.com/icons/338579629201817601/07355af9a6872d2c16f2dcb71d4abaed.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  99,012 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  26 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-338579629201817601" href="servers/338579629201817601.html">D7 Army 🐐</a>
+                    <p class="bot-description">Official Discord Server for DAN7EH.</p>
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/338579629201817601" onclick="outlinkDuplicate('/servers-338579629201817601')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-338579629201817601')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-444470893599784960')"
+                 style="cursor:pointer" alt="🎄 Chill Corner 🎄 Icon"
+                 src="cdn.discordapp.com/icons/444470893599784960/51d91abd6f1eb3909bc776e17e2c7c4a.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  82,156 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  54 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-444470893599784960" href="servers/444470893599784960.html">🎄 Chill Corner 🎄</a>
+                    <p class="bot-description">A friendly server to chill out and have fun!</p>
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/444470893599784960" onclick="outlinkDuplicate('/servers-444470893599784960')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-444470893599784960')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-91539983470452736')"
+                 style="cursor:pointer" alt="www.Discordianos.com Icon"
+                 src="cdn.discordapp.com/icons/91539983470452736/6f63de6afd41c738cb864c8ed8df8e0c.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  61,180 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  20 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-91539983470452736" href="servers/91539983470452736.html">www.Discordianos.com</a>
+                    <p class="bot-description">Chatear y hacer amigos en nuestra sala ¡Discordia o conoce los eventos interesantes en nuestra web! ;)....</p>
+                    <span class="lib">
+                            Fortnite, PUBG
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/91539983470452736" onclick="outlinkDuplicate('/servers-91539983470452736')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-91539983470452736')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+              </ul>
+              <div class="exploremorebots">
+                <button class="tagbutton" onclick="outlinkDuplicate('/servers-tag-fortnite');">More Fortnite Discord Servers</button>
+              </div>
+              <div style="width:100%;text-align:center;margin-bottom: -50px; margin-top: 15px;">
+                    <div style="margin: auto;height:90px;" id='cdm-zone-01'>
+                        <!-- discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                        <div class="vm-placement" data-id="5b608e9746e0fb0001318a60"></div>
+                        <!-- / discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                    </div>
+                </div>
+          </div>
+        </div>
+        <div class="container is-fullhd">
+          <div onclick="outlinkDuplicate('/servers-tag-pubg')" style="cursor:pointer" class="section-title is-flex">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7VjLahRBFL2igqggLgURcSWKIOpOF7oTVFBIUHTjYgiISxeJ0z3MSuIDXIkgCIIivnZGIZBlXCroB7h3NXnMw3fGc2rqdlfXdMIkE5IeqQOH7rr3VPU9XV01PS0BAQEBAQEB/yvaIhuasZxvRnK3EcmjIpK1sUZbcjcWbsg2iCYgag8CG7G8bVdlqy0/BRLVvA5FJmYotuWnQOJTIorkPY53cLxdKHZqYm1a50dbfgokZlXQiuSEDRcOrC0xgpptOAWDKhhII0gMk5imZp4RnqtG2SjLEZOryh6N1StyirHaqOzQGMZKdpf2iGzGOjyrOZsfalZlt5VIsyzH3LzDTD1aJ2tWDWdC3SXUjhBez8tjkf3FRc/VY7mcxGKZZh/EDjna5I6hzxsnnjKSOdyYXbjmRYyxkKshUQvHyRhxuKQRbnF5eRK5B8sxgkJmnHiGNIHjUz/ukrVwnMWNYOWTuGN/NKhGcP5OYz4x8MNlGXHWIK71U89JM04kz92YqcttoxaO4xoxNdv6zUUIJLoWO85TI5Fcw3Fc2/0YoYZ6p+0bGTd9OtfUWJcRMF3sCgZVUBQj9Uiu4K5/JRF7zNhAGsnDuhqZHZOd6D+n8fmKHId+CrGZViw1xIZ8I3iP2sJ+ZHtYNnIcYl2NOO0uYus9YzSeETxOY067hsfsJHX9G/G4xka4Q72ibvWNRHJ/LY2Aq7RrZVlrVuRor0ZWukZgpuzEVs3Ive9V2UfiItuZ79UIwXONU0O9017b3xEjdBCMBCNLGEFjyjCS3ypYiRFLjvXNaecaAV1NnhGSY7ntbiOdmk39vIArNuzDiM/FjGSInesSxn+Wl0sYyQTH8WYkYV9G5m/KfjwivxKNz0gmrZSPyWSeBv1/YCfci2MpL6/k7wrHWdxIRUYMY2lpUI2g82nNo+gDjPnAD9rhZAyHKOwqv5VZmfluxpivw6wetJLM9TIsywV+PKTGM9JSjRmAQLBrsRcRnpHedq0iohcjX1SAKX6Bx2C0oHypdWLdfbblp0AieUUfIN6y5afgix1m4kOOuJDEzEzzG5otPwu8DG6CoIQpe4Lj6yLS1lZy/zUGBAQEBAT0B5F/zNxjvKdDOsQAAAAASUVORK5CYII=" style="height:55px;width:55px;" alt="Pubg Discord Servers" title="Pubg Discord Servers">
+            <span><h4>PUBG Discord Servers</h4><p>A selection of servers related to PlayerUnknown&#39;s Battlegrounds</p></span>
+          </div>
+          <div class="bot-list-section">
+              <ul class="columns is-tablet">
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-411358677174321153')"
+                 style="cursor:pointer" alt="PUBG MOBILE OFFICIAL INDONESIA Icon"
+                 src="cdn.discordapp.com/icons/411358677174321153/0aa6a3456733a30897b91910eccfb0ac.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  64,231 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  49 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-411358677174321153" href="servers/411358677174321153.html">PUBG MOBILE OFFICIAL INDONESIA</a>
+                    <p class="bot-description">Winner Winner Chicken Dinner !!!</p>
+                    <span class="lib">
+                            PUBG, Gaming
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/411358677174321153" onclick="outlinkDuplicate('/servers-411358677174321153')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-411358677174321153')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-319560327719026709')"
+                 style="cursor:pointer" alt="Daddy Icon"
+                 src="cdn.discordapp.com/icons/319560327719026709/6f7561b0678a2bc88419d780cfb5bc73.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  58,910 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  98 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-319560327719026709" href="servers/319560327719026709.html">Daddy</a>
+                    <p class="bot-description">24/7-Active Voice And Text channels~1:1 Male to Female Ratio Chill Rules variety of channels,Gaming,Giveaways,Events etc</p>
+                    <span class="lib">
+                            Gaming, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/319560327719026709" onclick="outlinkDuplicate('/servers-319560327719026709')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-319560327719026709')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content  hasSplash ">
+                    <div class="guildCardSplash"><div class="image" style="background-image:url('cdn.discordapp.com/splashes/330605279798362123/166a5eb5db76cf67fbbffde4c136c245.png')"></div></div>
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-330605279798362123')"
+                 style="cursor:pointer" alt="Fortnite FR Icon"
+                 src="https://cdn.discordapp.com/icons/330605279798362123/7b7a3c6627e9d9051c830425094322d9.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  57,004 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  51 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-330605279798362123" href="servers/330605279798362123.html">Fortnite FR</a>
+                    <p class="bot-description">Discord de la Communauté Fortnite FR ayant +60 000 joueurs ! Nous sommes aussi sur Facebook, Twitter, Instagram, Youtube et Twitch</p>
+                    <span class="lib">
+                            Fortnite, PUBG
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/330605279798362123" onclick="outlinkDuplicate('/servers-330605279798362123')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-330605279798362123')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+        <li class="column bot-card is-one-fourth">
+            <div class="content   ">
+                <div class="top is-flex">
+                    <div class="img-container">
+                        <div class="bot-img ">
+            <img onload=""
+                 onclick="outlinkDuplicate('/servers-191455136013352960')"
+                 style="cursor:pointer" alt="No Game No Life - Anime &amp; Gaming Icon"
+                 src="https://cdn.discordapp.com/icons/191455136013352960/7ca967c86bb7c60799f8476434e87094.png">
+          </div>
+        </div>
+                    <span class="stats">
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  42,813 members
+          </span>
+          <span class="servers btn btn-orange btn-1x" style="margin-bottom: -10px;">
+                  100 emotes
+          </span>
+        </span>
+                </div>
+                <div class="info" >
+                    <a class="bot-name" id="guild-191455136013352960" href="servers/191455136013352960.html">No Game No Life - Anime &amp; Gaming</a>
+                    <p class="bot-description">Anime server with private osu server, unique points system, roles, open loot cases, automated simulcasts, gacha and more. </p>
+                    <span class="lib">
+                            Anime, Fortnite
+                    </span>
+                </div>
+                    <div class="bottom is-flex bot-btns">
+                        <span custom-context="/servers/191455136013352960" onclick="outlinkDuplicate('/servers-191455136013352960')" class="color-medium-blue btn">View</span>
+                            <span onclick="outlinkDuplicate('/servers-191455136013352960')" class="color-medium-blue btn">Join</span>
+                    </div>
+            </div>
+        </li>
+              </ul>
+              <div class="exploremorebots">
+                <button class="tagbutton" onclick="outlinkDuplicate('/servers-tag-pubg');">More PUBG Discord Servers</button>
+              </div>
+              <div style="width:100%;text-align:center;margin-bottom: -50px; margin-top: 15px;">
+                    <div style="margin: auto;height:90px;" id='cdm-zone-01'>
+                        <!-- discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                        <div class="vm-placement" data-id="5b608e9746e0fb0001318a60"></div>
+                        <!-- / discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+    <div id="bots">
+      <div class="container is-fullhd">
+        <div class="section-title is-flex">
+          <img src="servers/images/tag.svg" alt="Certified Bots" title="Certified Bots">
+          <span>
+            <h4>Tags</h4>
+            <p>A selection of Discord Server List's popular tags, find a server with your interests!</p>
+          </span>
+        </div>
+        <div class="bot-list-section">
+          <div class="maincon">
+            <div id="featuredtags">
+              <div id="wrapperrr">
+                    <button onclick="outlinkDuplicate('/servers-tag-anime')" class="tagbutton hvr-sweep-to-right"><i class="feed icon"></i>Anime</button>
+                      <a href="servers/tag/gaming.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="game icon"></i> Gaming</button>
+                      </a>
+                      <a href="servers/tag/roblox.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="game icon"></i> Roblox</button>
+                      </a>
+                      <a href="servers/tag/roleplay.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="comment icon"></i> Roleplay</button>
+                      </a>
+                      <a href="servers/tag/economy.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="money icon"></i> Economy</button>
+                      </a>
+                      <a href="servers/tag/meme.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="plus icon"></i> Meme</button>
+                      </a>
+                      <a href="servers/tag/stream.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="power icon"></i> Stream</button>
+                      </a>
+                      <a href="servers/tag/social.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="comments icon"></i> Social</button>
+                      </a>
+                      <a href="servers/tag/fun.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="wizard icon"></i> Fun</button>
+                      </a>
+                      <a href="servers/tag/music.html">
+                        <button class="tagbutton hvr-sweep-to-right"><i class="music icon"></i> Music</button>
+                      </a>
+                <button onclick="outlinkDuplicate('/servers-tags');" class="tagbutton hvr-sweep-to-right"><i class="plus icon"></i>24 More...</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="exploremorebots">
+          <button class="tagbutton" onclick="outlinkDuplicate('/servers-list-top');">Find More Servers</button>
+        </div>
+      </div>
+    </div>
+    <div id="bots">
+      <div class="container is-fullhd">
+        <div class="bot-list-section">
+          <div class="maincon">
+            <div id="featuredtags">
+              <div style="margin: auto">
+                    <a href="servers/list/top_page_1.html">
+                      <button class="tagbutton hvr-sweep-to-right">1</button>
+                    </a>
+                    <a href="servers/list/top_page_2.html">
+                      <button class="tagbutton hvr-sweep-to-right">2</button>
+                    </a>
+                    <a href="servers/list/top_page_3.html">
+                      <button class="tagbutton hvr-sweep-to-right">3</button>
+                    </a>
+                    <a href="servers/list/top_page_4.html">
+                      <button class="tagbutton hvr-sweep-to-right">4</button>
+                    </a>
+                    <a href="servers/list/top_page_5.html">
+                      <button class="tagbutton hvr-sweep-to-right">5</button>
+                    </a>
+                    <a href="servers/list/top_page_6.html">
+                      <button class="tagbutton hvr-sweep-to-right">6</button>
+                    </a>
+                    <a href="servers/list/top_page_7.html">
+                      <button class="tagbutton hvr-sweep-to-right">7</button>
+                    </a>
+                    <a href="servers/list/top_page_8.html">
+                      <button class="tagbutton hvr-sweep-to-right">8</button>
+                    </a>
+                    <a href="servers/list/top_page_9.html">
+                      <button class="tagbutton hvr-sweep-to-right">9</button>
+                    </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<footer>
+  <div class="centered clearfix">
+    <div class="footer-logo">
+      <img class="logo" src="servers/images/serverbot.svg" width="150px" height="150px" />
+    </div>
+    <div class="footer-contact">
+      <h3>CONTACT</h3>
+      <p><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="cbb8bebbbba4b9bf8bafa2b8a8a4b9afa9a4bfb8e5a4b9ac">[email&#160;protected]</a></p>
+      <p>+1 (657) 229-3345</p>
+    </div>
+    <div class="footer-navigation">
+      <div class="footer-links-holder">
+        <h3>IMPORTANT LINKS</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="terms.html">Terms of Service & Privacy</a>
+          </li>
+          <li>
+            <a href="advertise.html">Advertise on DBots</a>
+          </li>
+          <li>
+            <a href="https://medium.com/discord-bots" id="howToMakeDiscordBot">See our Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links-holder">
+        <h3>PARTNERS</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="https://medal.tv">Medal</a>
+          </li>
+          <li>
+            <a href="https://minecraftservers.biz">MinecraftServers.biz</a>
+          </li>
+          <li>
+            <a href = 'https://www.gameserverkings.com'>GameserverKings</a>
+          </li>
+        </ul>
+      </div>
+      <!--
+      <div class="footer-links-holder">
+        <h3>EXTRAS</h3>
+        <ul class="footer-links">
+          <li>
+            <span onclick="enableDarkTheme(this)" >
+              <span>Dark Theme</span>
+              <label class="dThemeSwitch">
+                <input id="darkThemeEnabler" type="checkbox" />
+                  <span class="slider round"></span>
+              </label>
+            </span>
+          </li>
+        </ul>
+      </div>
+    -->
+    </div>
+  </div>
+  <div class="bottom-bar">
+    All Rights Reserved © 2018
+    <p class="disclaimer">
+      Gooimeer 8, 1411DD Naarden, The Netherlands. KVK registration number: 70654115, The Netherlands. Use of this Web site constitutes acceptance of the Terms and Conditions and Privacy Policy. All copyrights, trademarks, service marks belong to the corresponding owners.
+      For support email us at <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="661513161609141226020f15050914020409121548091401">[email&#160;protected]</a> or call at +1 (657) 229-3345
+    </p>
+  </div>
+</footer>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<div id="scripts">
+    <script type="text/javascript" src="servers/js/main.js"></script>
+        <script>
+var validTags = ["Anime","Gaming","Roblox","Roleplay","Economy","Meme","Stream","Social","Fun","Music","Crypto","Developer","API","KPop","NSFW","Emotes","Support Server","LFG","Ring of Elysium","Overwatch","Rocket League","OSU!","Minecraft","League of Legends","Warframe","Diablo III","Rust","CSGO","Fortnite","PUBG","DOTA 2","Starcraft 2","Factorio","Rust"]
+var searchbar = document.querySelector('input[type="search"]');
+var searchtaglist = document.getElementById('searchtaglist');
+function search(el) {
+  location.href = "/servers/search?q="+el.parentNode.querySelector('input').value
+}
+function fillsearch(filler, removeLastWord) {
+  var search = document.querySelector('input[type="search"]');
+  if (removeLastWord) {
+    var temp = search.value.split(' ');
+    temp.splice(-1);
+    search.value = temp.join(' ');
+  }
+  search.value = search.value + (search.value && search.value.slice(-1) != ' ' ? ' ' : '') + filler + ' ';
+  search.focus();
+}
+document.querySelector('input[type="search"]').addEventListener('keyup', function(ev){
+  if (ev.keyCode == 13) search(ev.target);
+})
+var timeout, timeout2;
+document.querySelector('input[type="search"]').addEventListener('focus', function(e) {
+  processInsides();
+  var el = document.getElementById('searchopts');
+  el.style.display = 'block';
+  clearTimeout(timeout);
+  clearTimeout(timeout2);
+  setTimeout(function(){el.classList.add('open')}, 25);;
+});
+document.querySelector('input[type="search"]').addEventListener('input', function(e) {
+  processInsides();
+});
+function processInsides() {
+  var words = searchbar.value.split(' ');
+  var lastWord = words[words.length-1];
+  if ((words[words.length-2] && words[words.length-2].startsWith('tag:')) || (words[words.length-1] && words[words.length-1].startsWith('tag:'))) {
+    document.getElementById('searchoptionlist').style.display = 'none';
+    document.getElementById('searchtaglist').style.display = 'block';
+    filterSuggestions('tag', lastWord, words[words.length-2] != 'tag:');
+  } else {
+    document.getElementById('searchoptionlist').style.display = 'block';
+    document.getElementById('searchtaglist').style.display = 'none';
+    filterSuggestions('tag', lastWord, words[words.length-2] != 'tag:');
+  }
+}
+function filterSuggestions(type, input, includeTagFill) {
+  var validSet = type == 'tag' ? validTags : undefined;
+  if (input && input != 'tag:') {
+    input = input.replace('tag:', '');
+    var suggestions = validSet.filter(function(t){return t.toLowerCase().startsWith(input.toLowerCase())});
+  } else {
+    var suggestions = validSet;
+  }
+  suggestions = suggestions.map(function(s){if (!searchbar.value.includes('tag: ' + s) && !searchbar.value.includes('tag:' + s)) return '<p onclick="fillsearch(\''+(includeTagFill ? type + ': ' : '')+s+'\', true)">'+s+'</p>'});
+  suggestions.unshift('<p id="expandedsearchtitle">'+(type == 'tag' ? 'Tags' : '')+'</p>');
+  (type == 'tag' ? searchtaglist : undefined).innerHTML = suggestions.join('\n');
+  if (includeTagFill && input && input != "tag:" && suggestions.length != 1) {
+    (type == 'tag' ? searchtaglist : undefined).style.display = 'block';
+  } else if (includeTagFill && input && input != "tag:" && suggestions.length == 1) {
+    (type == 'tag' ? searchtaglist : undefined).style.display = 'none';
+  }
+}
+document.querySelector('input[type="search"]').addEventListener('focusout', function(e) {
+  timeout2 = setTimeout(function(){
+    var el = document.getElementById('searchopts');
+    el.classList.remove('open');
+    timeout = setTimeout(function(){el.style.display='none'}, 250);
+  }, 75);
+});
+</script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-98194944-1', 'auto');
+        ga('send', 'pageview');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '320184805116299');
+        fbq('track', 'PageView');
+    </script>
+    <!-- Venatus Market v3 -->
+    <script>
+        (function() {
+            document.write('<div id="vmv3-ad-manager" style="display:none"></div>');
+            document
+                .getElementById("vmv3-ad-manager")
+                .innerHTML = '<iframe id="vmv3-frm" src="javascript:\'<html><body></body></html>\'" width="0" height="0" data-mode="scan" data-site-id="5b608a2046e0fb0001330d9b"></iframe>';
+            var loaderFrame = document.getElementById("vmv3-frm");
+            var loaderFrameWindow = loaderFrame.contentWindow ? loaderFrame.contentWindow : loaderFrame.contentDocument;
+            loaderFrameWindow.document.open();
+            loaderFrameWindow.document.write('<scr'+'ipt src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" async>'+'</scr'+'ipt>');
+            loaderFrameWindow.document.close();
+        })();
+    </script>
+    <!-- / Venatus Market v3 -->
+    <script>
+        const showContext = (e, el) => {
+            $('.custom-context').css({
+                top: e.pageY,
+                left: e.pageX,
+                opacity: 1,
+                'pointer-events': 'all'
+            });
+            const link = $(el).attr('custom-context');
+            if (link) {
+               $("#custom-context-input").val('https://discordbots.org' + link);
+            }
+        };
+        const hideContext = () => {
+            $('.custom-context').css({
+                opacity: 0,
+                'pointer-events': 'none'
+            });
+        };
+        $('*').contextmenu(function(e){
+            if (!$('[custom-context]').is(e.target) && $('[custom-context]').has(e.target).length === 0) {
+                hideContext();
+            } else {
+                e.preventDefault();
+                e.stopPropagation();
+                showContext(e, this);
+            }
+        });
+        $('*').click(function(e){
+            if (!$('[custom-context] ul li').is(e.target) && $('[custom-context] ul li').has(e.target).length === 1) {
+               hideContext();
+            } else {
+                const link = document.getElementById("custom-context-input").value;
+                if ($($(this)[0]).hasClass('new-tab')) {
+                    const newTab = window.open(link, '_blank');
+                    newTab.focus();
+                } else if ($($(this)[0]).hasClass('new-window')) {
+                    const newWindow = window.open(link, "name", "titlebar=1,menubar=1,height=600,width=800");
+                    newWindow.focus();
+                } else if ($($(this)[0]).hasClass('copy-address')) {
+                    const copyText = document.getElementById("custom-context-input");
+                    copyText.select();
+                    document.execCommand("copy");
+                }
+                hideContext();
+            }
+        });
+    </script>
+</div>
+</html>

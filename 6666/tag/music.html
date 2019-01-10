@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../cdn-cgi/apps/head/-MZfg_LPbppfNWUAJBnzeqNlz5k.js"></script><link rel='stylesheet' href='../stylesheets/thenewstyle.css'/>
+    <meta charset="utf-8">
+<meta name="mobile-web-app-capable" content="no">
+<meta name="theme-color" content="#7289DA">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  if (localStorage.getItem('dark') === 'true') {
+    let theme_node = document.createElement('link');
+    theme_node.id = 'dtssheet';
+    theme_node.rel = 'stylesheet';
+    theme_node.href = '/stylesheets/darktheme.css';
+    document.head.appendChild(theme_node);
+    localStorage.setItem('dark', 'true');
+  }
+</script>
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" type="text/css">
+    <link rel='stylesheet' href='../cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.css'/>
+    <link rel='stylesheet' href='../cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.css'/>
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:title" content="Discord Bots">
+    <meta name="twitter:description"
+          content="Spice up your Discord experience with our diverse range of Music Discord bots">
+    <meta name="description"
+          content="Spice up your Discord experience with our diverse range of Music Discord bots">
+    <meta name="twitter:image" content="https://discordbots.org/images/dblnew.png">
+    <meta property="og:title" content="Discord Bots"/>
+    <meta property="og:url" content="https://discordbots.org"/>
+    <meta name="og:description"
+          content="Spice up your Discord experience with our diverse range of Music Discord bots">
+    <meta property="og:image" content="https://discordbots.org/images/dblnew.png"/>
+    <!-- Venatus Market v3 -->
+<script>
+(function() {
+document.write('<div id="vmv3-ad-manager" style="display:none"></div>');
+document
+.getElementById("vmv3-ad-manager")
+.innerHTML = '<iframe id="vmv3-frm" src="javascript:\'<html><body></body></html>\'" width="0" height="0" data-mode="scan" data-site-id="5b608a2046e0fb0001330d9b"></iframe>';
+var loaderFrame = document.getElementById("vmv3-frm");
+var loaderFrameWindow = loaderFrame.contentWindow ? loaderFrame.contentWindow : loaderFrame.contentDocument;
+loaderFrameWindow.document.open();
+loaderFrameWindow.document.write('<scr'+'ipt src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" async>'+'</scr'+'ipt>');
+loaderFrameWindow.document.close();
+})();
+</script>
+<!-- / Venatus Market v3 -->
+</head>
+<body>
+<meta property="og:description"
+      content="Discord Bots - Music Bots for Discord">
+<title>Discord Music Bots
+    | Discord Bot List </title>
+<section class="page" id="home-page">
+    <div class="shapes-background shapes-1"></div>
+    <div class="shapes-background shapes-2"></div>
+    <article>
+<nav class="is-widescreen is-mobile"  id="menu">
+<div class="alert" id="medalad_2018_11">
+    <a href="https://medal.tv/?ref=dblbanner" style="text-decoration: none;color:#fff" target="_blank">Record gaming clips with <span class="highlighted-word">Medal.tv</span>!  </a><i class="windows icon"></i> <a href="https://medal.tv/?ref=dblbanner" style="text-decoration: none;color:#fff" target="_blank"><span  style="cursor: pointer;" class="alert-cta">Download</span></a> <span class="dismiss" onclick="dismissAlert()"><i class="icon close icon"></i></span>
+  </div>
+<script>
+  let dismissedAlerts = JSON.parse(localStorage.getItem('dismissedAlerts')) || [];
+  const alertBanner = document.querySelector('.alert');
+  if (dismissedAlerts.includes(alertBanner.id)) alertBanner.style.display = 'none';
+  function dismissAlert() {
+    alertBanner.style.display = 'none';
+    dismissedAlerts.push(alertBanner.id);
+    localStorage.setItem('dismissedAlerts', JSON.stringify(dismissedAlerts));
+  }
+</script>
+  <style>
+@media only screen and (max-width: 842px) {
+    .alert {
+       display: none;
+    }
+}
+.highlighed-word {
+    text-decoration: underline!important;
+    font-weight: 500!important;
+}
+.alert {
+    font-weight: 100!important;
+    transition: 0.2s;
+}
+	  .alert:hover {
+		  background-color: #624ba8;
+	  }
+.alert-cta {
+    border: 1px solid lightgrey;
+    padding:5px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.alert-cta:hover {
+    background-color: white;
+    color: #624ba8;
+}
+.dismiss {
+  float: right;
+  cursor: pointer;
+}
+</style>
+  <input type="checkbox" id="show-menu">
+  <label id="menu-trigger" for="show-menu">
+    <span class="menu-bar menu-bar-1 white"></span>
+    <span class="menu-bar menu-bar-2 white"></span>
+    <span class="menu-bar menu-bar-3 white"></span>
+  </label>
+  <div class="menu container">
+    <ul>
+      <li><a class="logo" id="home" href="../index.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNyIgdmlld0JveD0iMCAwIDMwIDM3Ij4KICAgIDxnIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTIyLjAxIDcuODg2VjUuNDUyYy45Ny0uNTExIDEuNDc4LTEuNDYgMS40NzgtMi41MzFDMjMuNDg4IDEuMzE0IDIyLjE4IDAgMjAuNTgxIDBjLTEuNTk4IDAtMi45MDYgMS4zMTQtMi45MDYgMi45MiAwIDEuMDcxLjQ2IDEuOTk2IDEuNDI5IDIuNTA3djIuNDU5aC04LjcyVjUuNDI3YTIuOTI3IDIuOTI3IDAgMCAwIDEuNDMtMi41MDZDMTEuODEzIDEuMzE0IDEwLjUwNCAwIDguOTA2IDAgNy4zMDggMCA2IDEuMzE0IDYgMi45MmEyLjkgMi45IDAgMCAwIDEuNDc4IDIuNTMydjIuNDM0SDIyLjAxeiIvPgogICAgICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTI2LjM4OSAxMGMxLjk0NCAwIDMuNTE4IDEuNTYzIDMuNjExIDMuNDAxVjM3bC0zLjYxMS0zLjg2SDMuNTE5QzEuNTc0IDMzLjE0IDAgMzEuNjY4IDAgMjkuNzM3VjEzLjQwMUMwIDExLjU2MyAxLjU3NCAxMCAzLjUxOSAxMGgyMi44N3pNMTEuNSAxOGgtM2MtLjgyNSAwLTEuNS42NzUtMS41IDEuNXYzYzAgLjgyNS42NzUgMS41IDEuNSAxLjVoM2MuODI1IDAgMS41LS42NzUgMS41LTEuNXYtM2MwLS44MjUtLjY3NS0xLjUtMS41LTEuNXptMTAgMGgtM2MtLjgyNSAwLTEuNS42NzUtMS41IDEuNXYzYzAgLjgyNS42NzUgMS41IDEuNSAxLjVoM2MuODI1IDAgMS41LS42NzUgMS41LTEuNXYtM2MwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="Discord Bots" title="Discord Bots"></a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../tag/music.html">Music Bots</a></li>
+      <li><a href="../api/docs.html">API</a></li>
+      <li><a href="https://discord.gg/EYHTgJX">Join Discord</a></li>
+      <li><a href="https://medium.com/discord-bots">Blog</a></li>
+      <li><a href="../servers.html">Discord Servers</a></li>
+        <li><a href="https://discordapp.com/oauth2/authorize?client_id=264434993625956352&scope=identify&state=L3RhZy9tdXNpYw==&redirect_uri=https%3A%2F%2Fdiscordbots.org%2Flogin%2Fcallback&response_type=code">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<script>
+// const Http = new XMLHttpRequest();
+// const url='https://discordbots.org/api/weekend';
+// Http.open("GET", url);
+// Http.send();
+// Http.onreadystatechange=(e)=>{
+// var a = Http.responseText
+// var b = JSON.parse(a);
+// if (b.is_weekend === true) {
+//   document.getElementById("doublevoting").style.display = "block";
+// }
+// }
+</script>
+        <header 
+        >
+            <div class="container is-widescreen">
+                <div class="columns is-tablet">
+                    <div class="column is-two-thirds">
+                        <h1 id="botlistitle">
+                            Music Bots
+                            - Discord Bot List</h1>
+                        <h2>Spice up your Discord experience with our diverse range of Discord bots</h2>
+                        <div class="input-with-btn"><input class="mainsearch" type="search"
+                                                           placeholder="Search for specific bots..."
+                                                           value="">
+                            <button class="btn" onClick="search(this)">Search</button>
+                        </div>
+                        <div class="holder">
+                            <div class="expandedsearchres" id="searchopts">
+                                <div id="searchoptionlist">
+                                    <p id="expandedsearchtitle">Search Options</p>
+                                    <p onclick="fillsearch('tag:')">tag: <span
+                                                class="expandedsearchexample">category</span></p>
+                                    <p onclick="fillsearch('library:')" data="library">library: <span
+                                                class="expandedsearchexample">discord.js</span></p>
+                                </div>
+                                <div id="searchtaglist">
+                                </div>
+                                <div id="searchliblist">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="featuredbuttonss">
+                            <a href="../list/top.html">
+                                <button href="../list/top.html"
+                                        class="ui button  colorr ">
+                                    <i class="list layout icon"></i>
+                                    Top
+                                </button>
+                            </a>
+                            <a href="../tag/music.html">
+                                <button href="../tag/music.html"
+                                        class="ui button  act">
+                                    <i class="music icon"></i>
+                                    Music
+                                </button>
+                            </a>
+                            <a href="../list/certified.html">
+                                <button href="/list"
+                                        class="ui button  colorr ">
+                                    <i class="trophy icon"></i>
+                                    Certified
+                                </button>
+                            </a>
+                            <a href="../list/new.html">
+                                <button class="ui button  colorr ">
+                                    <i class="wizard icon"></i>
+                                    New Bots
+                                </button>
+                            </a>
+                            <a href="../tags.html">
+                                <button href="../tags.html"
+                                        class="ui button  colorr ">
+                                    <i class="tags icon"></i>
+                                    Explore Tags
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div id="illustration"><img src="../assets/images/discord_v2.1225443.svg"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="column is-two-thirds is-offset-2" style="margin-top:25px;">
+            <div class="modal" id="upvotenologin">
+                <div class="modal-background" onclick="closeModal(this)" style="z-index: -50;"></div>
+                <div class="modal-content" style="background-color: white; padding: 20px;">
+                    <p style="margin-bottom: 15px;">You must be logged in to upvote bots! <a
+                                href="https://discordapp.com/oauth2/authorize?client_id=264434993625956352&scope=identify&state=L3RhZy9tdXNpYw==&redirect_uri=https%3A%2F%2Fdiscordbots.org%2Flogin%2Fcallback&response_type=code"><strong>Login</strong></a></p>
+                    <div></div>
+                    <button style="background-color: #2E4492!important" class="button colorr is-primary"
+                            onClick="closeModal(this.parentNode)">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container is-fullhd">
+            <div class="section-title is-flex"><img src="../images/music.svg"
+                                                    style="margin-top: 10px; width: 36px; height: 36px;" class="icon"
+                                                    alt="Music Bots">
+                <span><a href="../tag/music.html"><h4 class="certifiedlisttitle">Discord Music
+                            Bots
+                        </h4></a><p>Discord bots that can play music for you in your voice channels!</p></span> <div id="voteselector" class="navbar-item has-dropdown is-hoverable">
+      </div></div>
+            <div id="bot-list">
+                <div class="bot-list-section">
+                    <ul class="columns is-multiline is-tablet">
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/8nLFCVP.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-270904126974590976')"
+                                       style="cursor:pointer" alt="Dank Memer"
+                                       src="../images.discordapp.net/avatars/270904126974590976/c9146cbc884d792c843529fcf1aec4dc.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('270904126974590976', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>87,350</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                594,643
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-270904126974590976"
+                                                            href="../bot/memes.html">Dank Memer</a>
+                                    <p class="bot-description">
+                                        Memes, image manipulation, memey gambling, and stupidity. We&#39;ve got it all and more.
+                                    </p><span class="lib">
+                                        Meme
+                                        Fun
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-270904126974590976')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/dkc1jAV.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-424606447867789312')"
+                                       style="cursor:pointer" alt="IdleRPG"
+                                       src="../images.discordapp.net/avatars/424606447867789312/75ffaf8befb0fba23fccf25d63a3f5fb.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('424606447867789312', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>63,786</span></button>
+                            <span class="status yellow">IDLE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                55,609
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-424606447867789312"
+                                                            href="../bot/idlerpg.html">IdleRPG</a>
+                                    <p class="bot-description">
+                                        An IdleRPG bot with shop system, characters, classes, dungeons, items, PvP, economy, gambling, marriage, music, guilds and much more!
+                                    </p><span class="lib">
+                                        Game
+                                        Roleplay
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-424606447867789312')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/2733ySj.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-234395307759108106')"
+                                       style="cursor:pointer" alt="Groovy"
+                                       src="../images.discordapp.net/avatars/234395307759108106/18b02cc3f97331485a6fd7dfd3106be5.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('234395307759108106', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>32,836</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                287,626
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-234395307759108106"
+                                                            href="../bot/groovy.html">Groovy</a>
+                                    <p class="bot-description">
+                                        A simple music bot that supports YouTube, Spotify, Soundcloud and more!
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-234395307759108106')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-239631525350604801')"
+                                       style="cursor:pointer" alt="Pancake"
+                                       src="../images.discordapp.net/avatars/239631525350604801/e207cc21beb292c21abc183dc076c719.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('239631525350604801', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>32,522</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                211,784
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-239631525350604801"
+                                                            href="../bot/pancake.html">Pancake</a>
+                                    <p class="bot-description">
+                                        Simple to use multi-purpose Discord bot - music, moderation, fun and more!
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Moderation
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-239631525350604801')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-206955935229280256')"
+                                       style="cursor:pointer" alt="Senpai"
+                                       src="../images.discordapp.net/avatars/206955935229280256/c95d792e43be88edb648705537089433.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('206955935229280256', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>18,898</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                51,540
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-206955935229280256"
+                                                            href="../bot/206955935229280256.html">Senpai</a>
+                                    <p class="bot-description">
+                                        THE ALL IN ONE WEEB BOT | ANIME IMAGES | FULL HD AUDIO | CURRENCY SYSTEM | GAMES | INFORMATION | MODERATION | TRY ME OUT NOW ❤
+                                    </p><span class="lib">
+                                        Anime
+                                        Music
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-206955935229280256')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/KQ0VGWh.jpg')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-280497242714931202')"
+                                       style="cursor:pointer" alt="Yui"
+                                       src="../images.discordapp.net/avatars/280497242714931202/99dedf187f2b3409bfc63bba5e7ca6c6.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('280497242714931202', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>11,917</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                92,902
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-280497242714931202"
+                                                            href="../bot/yui.html">Yui</a>
+                                    <p class="bot-description">
+                                        Fun, Currency, Profiles, Autorole, Reaction roles, Music, Logging, Starboard, Purge, Self roles +Mod tools
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Moderation
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-280497242714931202')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/RaD4xlZ.jpg')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-292953664492929025')"
+                                       style="cursor:pointer" alt="UnbelievaBoat"
+                                       src="../images.discordapp.net/avatars/292953664492929025/248f544317e0a8bfa241866e4a5cb820.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('292953664492929025', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>8,678</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                160,769
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-292953664492929025"
+                                                            href="../bot/unbelievable.html">UnbelievaBoat</a>
+                                    <p class="bot-description">
+                                        Money/Economy/Currency customisable per server | Role Income | Casino Games | Buyable Store Items | Moderation | Fun commands | Reminders
+                                    </p><span class="lib">
+                                        Economy
+                                        Game
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-292953664492929025')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/B7HI6Un.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-284035252408680448')"
+                                       style="cursor:pointer" alt="Tony Bamanaboni XD"
+                                       src="../images.discordapp.net/avatars/284035252408680448/3378e08178f2981e2f5986570e885793.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('284035252408680448', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>7,841</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                18,410
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-284035252408680448"
+                                                            href="../bot/tonybamanaboni.html">Tony Bamanaboni XD</a>
+                                    <p class="bot-description">
+                                        Music Bot | Audio Filters | Bass Boost | YouTube | SoundCloud | Spotify | Radio | Livestreams | Autoplaylists | Crossfade | SFX | 24/7 Music
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-284035252408680448')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-409016661983887380')"
+                                       style="cursor:pointer" alt="NuggetBot"
+                                       src="../images.discordapp.net/avatars/409016661983887380/5f1d3834268cf320957d06bb4c743f09.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('409016661983887380', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>7,551</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                13,628
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-409016661983887380"
+                                                            href="../bot/409016661983887380.html">NuggetBot</a>
+                                    <p class="bot-description">
+                                        Auto (hidden), reaction roles, twitch/youtube, reaction images, games, moderation, fun, wikipedia, reddit and...
+                                    </p><span class="lib">
+                                        Utility
+                                        Moderation
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-409016661983887380')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/zK0U5EV.jpg')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-424137718961012737')"
+                                       style="cursor:pointer" alt="Kashima"
+                                       src="../images.discordapp.net/avatars/424137718961012737/9caa35ff200def9cbb3a45e17addef8e.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('424137718961012737', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>6,686</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                33,530
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-424137718961012737"
+                                                            href="../bot/kashima-is-a-good-girl.html">Kashima</a>
+                                    <p class="bot-description">
+                                        I am Kashima, The Best Ship-Girl Bot. I have Weaboo Based Commands, Music, and much more. What are you waiting for? Go for Ship-Girls!
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Anime
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-424137718961012737')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-346577085155901451')"
+                                       style="cursor:pointer" alt="TomBot"
+                                       src="../images.discordapp.net/avatars/346577085155901451/a52860027238922cbe58296509d5f94f.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('346577085155901451', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>4,453</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                24,829
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-346577085155901451"
+                                                            href="../bot/tombot.html">TomBot</a>
+                                    <p class="bot-description">
+                                        Music ✅ Playlists ✅ Chat games ✅  Youtube-Spotify-SoundCloud-Twitch-Radio-Cards Against Humanity-Hangman-Connect 4-Blackjack-OSRS-Runescape
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Game
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-346577085155901451')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/fCPPJNd.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-275270122082533378')"
+                                       style="cursor:pointer" alt="AvaIre"
+                                       src="../images.discordapp.net/avatars/275270122082533378/663c80516bed783a4e98f8faa95da90c.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('275270122082533378', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>4,120</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                34,017
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-275270122082533378"
+                                                            href="../bot/avaire.html">AvaIre</a>
+                                    <p class="bot-description">
+                                        A high quality Music bot, with moderation, interaction, search, administration commands, highly customizable and much more! 
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Fun
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-275270122082533378')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/A6K2ffc.jpg')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-247134460024193027')"
+                                       style="cursor:pointer" alt="Strodl Bot"
+                                       src="../images.discordapp.net/avatars/247134460024193027/74ca688493de5a97fcfe0160d294f371.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('247134460024193027', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>3,810</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                13,830
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-247134460024193027"
+                                                            href="../bot/strodl.html">Strodl Bot</a>
+                                    <p class="bot-description">
+                                        Strodl has many features such as: HD Music Streaming,Cards Against Humanity,Text-based Adventures,Economy,Multiple Languages, Online 24/7
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Fun
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-247134460024193027')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/0jlOFIM.jpg')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-349289613593935893')"
+                                       style="cursor:pointer" alt="RickBot"
+                                       src="../images.discordapp.net/avatars/349289613593935893/22f4a945316236934239db321152a13d.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('349289613593935893', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>3,691</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                35,330
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-349289613593935893"
+                                                            href="../bot/rickbot.html">RickBot</a>
+                                    <p class="bot-description">
+                                        Custom soundboards, lots of memes and pics, has powerful music (with servers around the world). Over 70+ commands and 4500+ soundboards! 
+                                    </p><span class="lib">
+                                        Fun
+                                        Music
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-349289613593935893')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="column bot-card is-one-quarter">
+                            <div class="content ">
+                            <div class="cert-banner" style="background-image:url('../tag/../i.imgur.com/smPeYN6.png')"><div class="cert-banner-overlay"></div></div>
+                                <div class="top is-flex"><span class="img-container"><div class="bot-img">
+                                  <img onload=""
+                                       onclick="outlinkDuplicate('bot-303181184718995457')"
+                                       style="cursor:pointer" alt="PenguBot"
+                                       src="../images.discordapp.net/avatars/303181184718995457/131cf54976315e7bc441616050d8b213.png">
+                          </div></span>
+                                    <span
+                                            class="stats"><button data-tooltip="Votes this month"
+                                                                  class="btn-like btn is-flex"
+                                                                  onclick="upvote('303181184718995457', this)"><img
+                                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyI+CiAgICA8cGF0aCBmaWxsPSIjMzM0REFEIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xMC42NzYgNS42MTVMOS41ODQgNi42MzNhLjQxOC40MTggMCAwIDEtLjI5Ni4xMTcuNDE4LjQxOCAwIDAgMS0uMjk2LS4xMTdMNS41IDMuMzU4IDIuMDA4IDYuNjMzYS40MTguNDE4IDAgMCAxLS4yOTYuMTE3LjQxOC40MTggMCAwIDEtLjI5Ni0uMTE3TC4zMjQgNS42MTVhLjM3MS4zNzEgMCAwIDEtLjEyNS0uMjhjMC0uMTEuMDQyLS4yMDMuMTI1LS4yODFsNC44OC00LjU3QS40MTguNDE4IDAgMCAxIDUuNS4zNjZjLjExNCAwIC4yMTMuMDQuMjk2LjExOGw0Ljg4IDQuNTdhLjM3MS4zNzEgMCAwIDEgLjEyNS4yOC4zNzEuMzcxIDAgMCAxLS4xMjUuMjgxeiIvPgo8L3N2Zz4K"><span>3,358</span></button>
+                            <span class="status green">ONLINE</span>
+                            <span
+                                    class="servers btn btn-orange btn-1x">
+                                33,679
+                                Servers
+                            </span>
+                                        </span>
+                                </div>
+                                <div class="info">       <a class="bot-name" id="bot-303181184718995457"
+                                                            href="../bot/pengubot.html">PenguBot</a>
+                                    <p class="bot-description">
+                                        Spotify, YouTube, Twitch, Playlists and More! | CSGO, Fortnite, !osu Stats | Server Management, Image Manipulation, Jokes, Games, etc.
+                                    </p><span class="lib">
+                                        <a href="../tag/music.html">Music</a>
+                                        Moderation
+                                    </span></div>
+                                <div onclick="outlinkDuplicate('bot-303181184718995457')" class="bottom is-flex bot-btns">
+                                    <span class="color-medium-blue btn">View</span><span
+                                            class="color-medium-blue btn">Invite</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div style="width:100%;text-align:center;margin-bottom: 30px; margin-top: 15px;">
+                    <div style="margin: auto;height:90px;" id='cdm-zone-01'>
+                        <!-- discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                        <div class="vm-placement" data-id="5b608e9746e0fb0001318a60"></div>
+                        <!-- / discordbots.org - 728x90 Dynamic (5b608e9746e0fb0001318a60) -->
+                    </div>
+                </div>
+        <div class="pagenumbers" style="text-align: center;margin-top: 50px;">
+            <div class="ui buttons" style="display: inline-block;text-align: center;">
+                <img style="margin-left: 20px;cursor: pointer;"
+                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAiIGhlaWdodD0iNTMiIHZpZXdCb3g9IjAgMCA1MCA1MyI+CiAgICA8ZGVmcz4KICAgICAgICA8Y2lyY2xlIGlkPSJiIiBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiLz4KICAgICAgICA8ZmlsdGVyIGlkPSJhIiB3aWR0aD0iMTA2JSIgaGVpZ2h0PSIxMTIlIiB4PSItMyUiIHk9Ii0zJSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICAgICAgICAgICAgPGZlT2Zmc2V0IGR5PSIzIiBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93T2Zmc2V0T3V0ZXIxIi8+CiAgICAgICAgICAgIDxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dPZmZzZXRPdXRlcjEiIHZhbHVlcz0iMCAwIDAgMCAwLjA4MTIgMCAwIDAgMCAwLjEyNDI3MzMzMyAwIDAgMCAwIDAuMjggMCAwIDAgMSAwIi8+CiAgICAgICAgPC9maWx0ZXI+CiAgICA8L2RlZnM+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnPgogICAgICAgICAgICA8dXNlIGZpbGw9IiMwMDAiIGZpbHRlcj0idXJsKCNhKSIgeGxpbms6aHJlZj0iI2IiLz4KICAgICAgICAgICAgPHVzZSBmaWxsPSIjMzM0REFEIiB4bGluazpocmVmPSIjYiIvPgogICAgICAgIDwvZz4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTcuODg2IDEzLjIzOGExLjgyMiAxLjgyMiAwIDAgMSAxLjc4LS4wMTJMMzkuMDk0IDIzLjk4Yy41Ni4zMTEuOTA2Ljg5My45MDYgMS41MjEgMCAuNjI5LS4zNDcgMS4yMS0uOTA2IDEuNTIxTDE5LjY2NiAzNy43NzRhMS44MjQgMS44MjQgMCAwIDEtMS43OC0uMDEyQTEuNzQxIDEuNzQxIDAgMCAxIDE3IDM2LjI1M1YxNC43NDhjMC0uNjIyLjMzNy0xLjE5Ny44ODYtMS41MXptMi42NSAyMC4wMDVsMTQuMDE2LTcuNzU4LTE0LjAxNi03Ljc1N3YxNS41MTV6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo="
+                     onclick="updateQSParam('page', 2)">
+            </div>
+        </div>
+        </div>
+    </article>
+</section>
+<footer>
+  <div class="centered clearfix">
+    <div class="footer-logo">
+      <img class="logo" src="../images/logotrans.png" width="150px" height="150px">
+    </div>
+    <div class="footer-contact">
+       <h3>CONTACT</h3>
+       <p><a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="53202623233c212713373a20303c2137313c27207d3c2134">[email&#160;protected]</a></p>
+       <p>+1 (831) 709-9211</p>
+    </div>
+    <div class="footer-navigation">
+      <div class="footer-links-holder">
+        <h3>IMPORTANT LINKS</h3>
+        <ul class="footer-links">
+          <li><a href="../terms.html">Terms of Service & Privacy</a></li>
+          <li><a href="../advertise.html">Advertise on DBots</a></li>
+          <li><a href="https://medium.com/discord-bots/making-a-basic-discord-bot-with-java-834949008c2b" id="howToMakeDiscordBot">How To Make A Discord Bot</a></li>
+          <li><a href="https://toplist.gg">Toplist</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-holder">
+        <h3>PARTNERS</h3>
+        <ul class="footer-links">
+          <li><a href="https://medal.tv">Medal</a></li>
+          <li><a href="https://minecraftservers.biz">MinecraftServers.biz</a></li>
+          <li><a href = 'https://www.gameserverkings.com'>GameserverKings</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-holder">
+        <h3>EXTRAS</h3>
+        <ul class="footer-links">
+          <li>
+            <span onclick="enableDarkTheme(this)" >
+              <span>Dark Theme</span>
+              <label class="dThemeSwitch">
+                <input id="darkThemeEnabler" type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+      All Rights Reserved © 2018
+     <p class="disclaimer">Gooimeer 8, 1411DD Naarden, The Netherlands. KVK registration number: 70654115, The Netherlands. Use of this Web site constitutes acceptance of the Terms and Conditions and Privacy Policy. All copyrights, trademarks, service marks belong to the corresponding owners.
+For support email us at <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="760503060619040236121f05151904121419020558190411">[email&#160;protected]</a>, call at +31857733181 or +1 (831) 709-9211</p>
+  </div>
+  <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function addDTToHeader () {
+      let theme_node = document.createElement("LINK")
+      theme_node.setAttribute("rel", "stylesheet")
+      theme_node.setAttribute("id", "dtssheet")
+      theme_node.setAttribute("href", "/stylesheets/darktheme.css")
+      document.querySelector('head').appendChild(theme_node)
+    }
+    let cb = document.getElementById('darkThemeEnabler')
+    function enableDarkTheme() {
+      if (cb.checked) {
+        localStorage.setItem('dark', 'false')
+        if (document.getElementById('dtssheet')) document.querySelector('head').removeChild(document.getElementById('dtssheet'))
+        cb.checked = false
+      } else {
+        cb.checked = true
+        localStorage.setItem('dark', 'true')
+        addDTToHeader()
+      }
+    }
+    if (localStorage.getItem('dark') === 'true') {
+      cb.checked = true
+      //addDTToHeader()
+    } else {
+      cb.checked = false
+    }
+  </script>
+</footer>
+<div id='cdm-zone-end'></div>
+<!-- Begin comScore -->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "6035118" });
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>
+  <img src="../b.scorecardresearch.com/p_c1_2_amp_c2_6035118_amp_cv_2.0_amp_cj_1.gif" />
+</noscript>
+<!-- End comScore -->
+<!-- Nielsen Online SiteCensus -->
+<div><img src="../secure-us.imrworldwide.com/cgi-bin/m_ci_us-603339h_amp_cg_0_amp_cc_1_amp_ts_noscript.gif" width="1" height="1" alt="" /></div>
+<!-- End Nielsen Online SiteCensus -->
+<!-- Venatus Market v3 -->
+<script>
+(function() {
+document.write('<div id="vmv3-ad-manager" style="display:none"></div>');
+document
+.getElementById("vmv3-ad-manager")
+.innerHTML = '<iframe id="vmv3-frm" src="javascript:\'<html><body></body></html>\'" width="0" height="0" data-mode="scan" data-site-id="5b608a2046e0fb0001330d9b"></iframe>';
+var loaderFrame = document.getElementById("vmv3-frm");
+var loaderFrameWindow = loaderFrame.contentWindow ? loaderFrame.contentWindow : loaderFrame.contentDocument;
+loaderFrameWindow.document.open();
+loaderFrameWindow.document.write('<scr'+'ipt src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" async>'+'</scr'+'ipt>');
+loaderFrameWindow.document.close();
+})();
+</script>
+<!-- / Venatus Market v3 -->
+<script>
+    console.log("GA Loaded");
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-98194944-1', 'auto');
+    ga('send', 'pageview');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '320184805116299');
+    fbq('track', 'PageView');
+</script>
+<script>
+    /**
+     * Function that tracks a click on an outbound link in Analytics.
+     * This function takes a valid URL string as an argument, and uses that URL string
+     * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+     * using 'navigator.sendBeacon' in browser that support it.
+     */
+    var trackOutboundLink = function(url) {
+        ga('send', 'event', 'outbound', 'click', url, {
+            'transport': 'beacon',
+            'hitCallback': function(){document.location = url;}
+        });
+    };
+    var trackCampaignImpression = function(name, location) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'impression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignBotPageImpression = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'botPageImpression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignServerJoin = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'serverJoin',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignWebClick = function(name, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'webClick',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackRegularServerJoin = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'serverJoin',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackRegularWebClick = function(name, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'webClick',
+            eventLabel: label
+        });
+    }
+    var trackRegularBotPageImpression = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'botPageImpression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackUpvote = function(id, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "upvote",
+            eventAction: id,
+            eventLabel: label
+        });
+    }
+    var myConfObj = {
+        iframeMouseOver : false
+    }
+    window.addEventListener('blur',function(){
+        if(myConfObj.iframeMouseOver){
+            if(window.campaign === undefined) {
+                trackRegularWebClick(window.botName, 'iframe');
+            } else {
+                trackCampaignWebClick(window.campaign, 'iframe');
+            }
+        }
+    });
+    if( document.getElementById('botiframe')) {
+        document.getElementById('botiframe').addEventListener('mouseover', function () {
+            myConfObj.iframeMouseOver = true;
+        });
+        document.getElementById('botiframe').addEventListener('mouseout', function () {
+            myConfObj.iframeMouseOver = false;
+        });
+    }
+    var setCampaignIframe = function(campaign) {
+        window.campaign = campaign;
+    }
+    var setRegularIframe = function(botName) {
+        window.botName = botName;
+    }
+</script>
+<script>
+    var outlinkDuplicate = function (id) {
+        document.getElementById(id).click();
+    }
+</script>
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!localStorage.getItem('HasSeenAnnoyingPopup')) {
+            var modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = '<div class="modal-background" style="z-index: -50;"></div>\
+                <div class="modal-content" style="background-color: white; padding: 20px;">\
+                    <p style="margin-bottom: 15px;">We use cookies to understand how you use our site and to improve your experience. This includes personalizing content and advertising. To learn more, <a href="https://discordbots.org/terms"><strong>click here</strong></a>. By continuing to use our site, you accept our use of cookies, revised Privacy Policy and Terms of Use.</p>\
+                    <div></div>\
+                    <button style="background-color: #2E4492!important" class="button colorr is-primary" onClick="this.parentNode.parentNode.classList.remove(\'is-active\');localStorage.setItem(\'HasSeenAnnoyingPopup\', true)">Close</button>\
+                </div>';
+            modal.classList.add('is-active');
+            document.body.appendChild(modal);
+        }
+    });
+</script> -->
+</body>
+</html>
+<script>
+    var validTags = ["Music","Moderation","Fun","Economy","Anime","Game","Meme","Social","Leveling","Roleplay","Role Management","Logging","Web Dashboard","Stream","Crypto","Media","Turkish","Soundboard","Utility","Customizable Behavior","PUBG","Rocket League","Fortnite","Overwatch","CSGO","OSU!","Minecraft","League of Legends","Warframe","Diablo III","Rust","DOTA 2","Starcraft 2","Factorio","Runescape","Looking For Game"]
+    var validLibs = ["discordcr","Nyxx","Discord.Net","DSharpPlus","Nostrum","coxir","DiscordGo","Discord4J","Javacord","JDA","discord.js","Eris","Discordia","RestCord","Yasmin","disco","discord.py","discordrb","serenity","SwiftDiscord","Sword"]
+    var searchbar = document.querySelector('input[type="search"]');
+    var searchtaglist = document.getElementById('searchtaglist');
+    var searchliblist = document.getElementById('searchliblist');
+    var library = document.querySelector('p[data="library"]');
+    function search(el) {
+      location.href = "/search?q="+el.parentNode.querySelector('input').value
+    }
+    function fillsearch(filler, removeLastWord) {
+      var search = document.querySelector('input[type="search"]');
+      if (removeLastWord) {
+        var temp = search.value.split(' ');
+        temp.splice(-1);
+        search.value = temp.join(' ');
+      }
+      search.value = search.value + (search.value && search.value.slice(-1) != ' ' ? ' ' : '') + filler + ' ';
+      search.focus();
+    }
+    document.querySelector('input[type="search"]').addEventListener('keyup', function(ev){
+      if (ev.keyCode == 13) search(ev.target);
+    })
+    var timeout, timeout2;
+    document.querySelector('input[type="search"]').addEventListener('focus', function(e) {
+      processInsides();
+      var el = document.getElementById('searchopts');
+      el.style.display = 'block';
+      clearTimeout(timeout);
+      clearTimeout(timeout2);
+      setTimeout(function(){el.classList.add('open')}, 25);;
+    });
+    document.querySelector('input[type="search"]').addEventListener('input', function(e) {
+      processInsides();
+    });
+    function processInsides() {
+      var words = searchbar.value.split(' ');
+      var lastWord = words[words.length-1];
+      if ((words[words.length-2] && words[words.length-2].startsWith('tag:')) || (words[words.length-1] && words[words.length-1].startsWith('tag:'))) {
+        document.getElementById('searchoptionlist').style.display = 'none';
+        document.getElementById('searchtaglist').style.display = 'block';
+        document.getElementById('searchliblist').style.display = 'none';
+        filterSuggestions('tag', lastWord, words[words.length-2] != 'tag:');
+      } else if((words[words.length-2] && words[words.length-2].startsWith('library:')) || (words[words.length-1] && words[words.length-1].startsWith('library:'))) {
+        document.getElementById('searchoptionlist').style.display = 'none';
+        document.getElementById('searchtaglist').style.display = 'none';
+        document.getElementById('searchliblist').style.display = 'block';
+        filterSuggestions('library', lastWord, words[words.length-2] != 'library:');
+      } else {
+        document.getElementById('searchoptionlist').style.display = 'block';
+        document.getElementById('searchtaglist').style.display = 'none';
+        document.getElementById('searchliblist').style.display = 'none';
+        filterSuggestions('tag', lastWord, words[words.length-2] != 'tag:');
+        filterSuggestions('library', lastWord, words[words.length-2] != 'library:');
+      }
+      searchbar.value.includes('library:') ? library.style.display = 'none' : library.style.display = 'block';
+    }
+    function filterSuggestions(type, input, includeTagFill) {
+      var validSet = type == 'tag' ? validTags : validLibs;
+      if (input && input != 'tag:' && input != 'library:') {
+        input = input.replace('tag:', '');
+        input = input.replace('library:', '');
+        var suggestions = validSet.filter(function(t){return t.toLowerCase().startsWith(input.toLowerCase())});
+      } else {
+        var suggestions = validSet;
+      }
+      suggestions = suggestions.map(function(s){if (!searchbar.value.includes('tag: ' + s) && !searchbar.value.includes('tag:' + s) && !searchbar.value.includes('library: ' + s) && !searchbar.value.includes('library:' + s)) return '<p onclick="fillsearch(\''+(includeTagFill ? type + ': ' : '')+s+'\', true)">'+s+'</p>'});
+      suggestions.unshift('<p id="expandedsearchtitle">'+(type == 'tag' ? 'Tags' : 'Libraries')+'</p>');
+      (type == 'tag' ? searchtaglist : searchliblist).innerHTML = suggestions.join('\n');
+      if (includeTagFill && input && input != "tag:" && input != "library:" && suggestions.length != 1) {
+        (type == 'tag' ? searchtaglist : searchliblist).style.display = 'block';
+      } else if (includeTagFill && input && input != "tag:" && input != "library:" && suggestions.length == 1) {
+        (type == 'tag' ? searchtaglist : searchliblist).style.display = 'none';
+      }
+    }
+    document.querySelector('input[type="search"]').addEventListener('focusout', function(e) {
+      timeout2 = setTimeout(function(){
+        var el = document.getElementById('searchopts');
+        el.classList.remove('open');
+        timeout = setTimeout(function(){el.style.display='none'}, 250);
+      }, 75);
+    });
+</script>
+<script>
+ document.addEventListener('DOMContentLoaded', function(){
+        var i = 0;
+        document.querySelectorAll('.bot-card').forEach(function(el){
+            setTimeout(function(){
+                el.style.opacity = 1;
+                el.style.transform = 'translateY(0px)'
+            }, i*80);
+            i++;
+        })
+        document.querySelectorAll('[data-tooltip]').forEach(function(el){
+            el.addEventListener('mouseover', function(){
+                var tooltip = document.querySelector('.tooltip')
+                tooltip.innerHTML = el.getAttribute('data-tooltip');
+                tooltip.style.left = (el.getBoundingClientRect().left + el.clientWidth + 10) + "px";
+                tooltip.style.top = (el.getBoundingClientRect().top + (el.clientHeight/2) - (tooltip.clientHeight/2)) + "px";
+                tooltip.style.opacity = 1;
+            })
+            el.addEventListener('mouseout', function(){
+                document.querySelector('.tooltip').style.opacity = 0;
+            })
+        })
+        window.addEventListener('scroll', function(){
+            document.querySelector('.tooltip').style.opacity = 0;
+        });
+    })
+    function request(opts, callback) {
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState != 4) return
+            if (xhr.status >= 200 && xhr.status < 400) {
+                return callback(null, xhr.getResponseHeader("Content-Type") != null && xhr.getResponseHeader("Content-Type").indexOf("application/json") != -1 ? JSON.parse(xhr.responseText) : xhr.responseText, xhr)
+            }
+            var msg = xhr.responseText || "Error"
+            callback(Error(msg), null, xhr)
+        }
+        xhr.open(opts.method || "GET", opts.url)
+        for (var key in opts.headers) {
+            xhr.setRequestHeader(key, opts.headers[key])
+        }
+        xhr.send(opts.data)
+        return xhr
+    }
+    function updateQSParam(key, value) {
+        var uri = location.href;
+        var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return location.href = uri.replace(re, '$1' + key + "=" + value + '$2');
+        } else {
+            return location.href = uri + separator + key + "=" + value;
+        }
+    }
+    function closeModal(el) {
+        el.parentNode.classList.remove('is-active');
+    }
+    function upvote(id, el) {
+        if (!document.getElementById('userloggedin')) return document.getElementById('upvotenologin').classList.add('is-active');
+        var voted = el.classList.contains('voted');
+        request({
+            url: window.location.protocol + "//" + window.location.hostname + "/api/vote",
+            method: "POST",
+            data: JSON.stringify({bot: id, type: voted ? "none" : "upvote"}),
+            headers: {"Content-Type": "application/json"}
+        }, function (err, res) {
+            if (err) return console.error(err);
+            trackUpvote(id);
+            voted ? el.classList.remove('voted') : el.classList.add('voted');
+            el.children[1].innerHTML = res.points.toLocaleString('en-US');
+        });
+    }
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq)return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '320184805116299');
+    fbq('track', 'PageView');
+</script>
+</body>
+</html>

@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Bots | API</title>
+  <script src="../cdn-cgi/apps/head/-MZfg_LPbppfNWUAJBnzeqNlz5k.js"></script><link rel='stylesheet' href='../stylesheets/thenewstyle.css' />
+  <link rel='stylesheet' href='../stylesheets/api.css' />
+  <link rel='stylesheet' href='../cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.css' />
+  <link rel='stylesheet' href='../cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.css' />
+  <meta charset="utf-8">
+<meta name="mobile-web-app-capable" content="no">
+<meta name="theme-color" content="#7289DA">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  if (localStorage.getItem('dark') === 'true') {
+    let theme_node = document.createElement('link');
+    theme_node.id = 'dtssheet';
+    theme_node.rel = 'stylesheet';
+    theme_node.href = '/stylesheets/darktheme.css';
+    document.head.appendChild(theme_node);
+    localStorage.setItem('dark', 'true');
+  }
+</script>
+  <meta name="description" content="Discord Bots - Spice up your Discord experience with our diverse range of Discord bots">
+  <meta name="twitter:card" value="summary">
+  <meta name="twitter:title" content="Discord Bots">
+  <meta name="twitter:description" content="Spice up your Discord experience with our diverse range of Discord bots">
+  <meta name="twitter:image" content="https://discordbots.org/images/logo.png">
+  <meta property="og:title" content="Discord Bots" />
+  <meta property="og:url" content="https://discordbots.org" />
+  <meta property="og:description" content="Spice up your Discord experience with our diverse range of Discord bots">
+  <meta property="og:image" content="https://discordbots.org/images/logo.png" />
+  <script src="../ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function fadeIn (el) {
+      el.style.display = "block";
+      el.style.opacity = '0';
+      setTimeout(() => {
+        el.style.transition = '0.6s';
+        el.style.opacity = '1';
+        el.style['pointer-events'] = 'all';
+        el.style.left = "300px";
+      }, 200)
+    }
+    function fadeOut (el) {
+      el.style.transition = '0.2s';
+      el.style.opacity = '0';
+      el.style['pointer-events'] = 'none';
+      el.style.left = "500px";
+      setTimeout(() => {
+        el.style.display = "none";
+      }, 200)
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.container__main').forEach(function(el) {
+        var page = el.getAttribute('data-page');
+        if (page === window.location.hash.replace(/#/g, '') || (window.location.hash == "" && page == 'intro'))
+          fadeIn(el)
+        else
+          fadeOut(el)
+      })
+      document.querySelectorAll('.main-nav-link a').forEach(function(el) {
+        var page = el.getAttribute('data-goto');
+        if (page === window.location.hash.replace(/#/g, '') || (window.location.hash == "" && page == 'intro')){
+          el.children[0].classList.add('active')
+        }else{
+          el.children[0].classList.remove('active')
+        }
+      })
+      document.querySelectorAll('a').forEach(function(el){el.addEventListener('click', function(e) {
+        var goto = this.getAttribute('data-goto');
+        document.querySelectorAll('.main-nav-link div').forEach(function(el){el.classList.remove('active')});
+        if (goto) {
+          this.children[0].classList.add('active');
+          document.querySelectorAll('.container__main').forEach(function(el) {
+            var page = el.getAttribute('data-page');
+            if (goto == page)
+              fadeIn(el)
+            else
+              fadeOut(el)
+          })
+        } else {
+          return;
+        }
+      })})
+      window.addEventListener('scroll', function(e){
+        var scroll = window.scrollY;
+        var nav = document.querySelector('.vertical-nav-bar');
+        if (scroll > 80) {
+          nav.style.position = 'fixed';
+          nav.style.top = '-80px';
+          nav.style.height = '100%';
+          nav.style.width = '300px';
+        } else {
+          nav.style.position = 'absolute';
+          nav.style.top = '0px';
+          nav.style.height = 'calc(100% - 80px)';
+          nav.style.width = '300px';
+        }
+      });
+      document.querySelectorAll('.bot_card').forEach(function(el){el.addEventListener('click', function(e) {
+        var ak = document.querySelector('.api_key_viewer');
+        if (ak.style.opacity != 0) {
+          ak.style.transition = '0s';
+          ak.style.opacity = '0';
+        }
+        document.querySelector('.api_key_viewer .botname').innerText = el.querySelector('.bot_name').innerText;
+        var token = el.getAttribute('data-token');
+        var id = el.getAttribute('data-id');
+        var webhook = el.getAttribute('data-webhook');
+        document.querySelector('.api_token').innerText = token ? token : 'This bot has no token. Generate one below';
+        document.querySelector('.api_token_regen').href = "/api/docs/?gen=" + id;
+        document.querySelector('.api_token_regen').innerText = token ? 'Regenerate token' : 'Generate token';
+        if(webhook) {
+          document.querySelector('.api_webhook_tester').setAttribute("onclick", "testWebhook('"+id+"')");
+          document.querySelector('.api_webhook_tester_container').style.display = "block";
+        } else {
+          document.querySelector('.api_webhook_tester_container').style.display = "none";
+        }
+        setTimeout(function(){
+          ak.style.transition = '0.2s';
+          ak.style.opacity = '1';
+        }, 200);
+      })})
+    })
+  </script>
+  <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" type="text/css">
+</head>
+<body>
+<nav class="is-widescreen is-mobile"  id="menu">
+<div class="alert" id="medalad_2018_11">
+    <a href="https://medal.tv/?ref=dblbanner" style="text-decoration: none;color:#fff" target="_blank">Record gaming clips with <span class="highlighted-word">Medal.tv</span>!  </a><i class="windows icon"></i> <a href="https://medal.tv/?ref=dblbanner" style="text-decoration: none;color:#fff" target="_blank"><span  style="cursor: pointer;" class="alert-cta">Download</span></a> <span class="dismiss" onclick="dismissAlert()"><i class="icon close icon"></i></span>
+  </div>
+<script>
+  let dismissedAlerts = JSON.parse(localStorage.getItem('dismissedAlerts')) || [];
+  const alertBanner = document.querySelector('.alert');
+  if (dismissedAlerts.includes(alertBanner.id)) alertBanner.style.display = 'none';
+  function dismissAlert() {
+    alertBanner.style.display = 'none';
+    dismissedAlerts.push(alertBanner.id);
+    localStorage.setItem('dismissedAlerts', JSON.stringify(dismissedAlerts));
+  }
+</script>
+  <style>
+@media only screen and (max-width: 842px) {
+    .alert {
+       display: none;
+    }
+}
+.highlighed-word {
+    text-decoration: underline!important;
+    font-weight: 500!important;
+}
+.alert {
+    font-weight: 100!important;
+    transition: 0.2s;
+}
+	  .alert:hover {
+		  background-color: #624ba8;
+	  }
+.alert-cta {
+    border: 1px solid lightgrey;
+    padding:5px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+.alert-cta:hover {
+    background-color: white;
+    color: #624ba8;
+}
+.dismiss {
+  float: right;
+  cursor: pointer;
+}
+</style>
+  <input type="checkbox" id="show-menu">
+  <label id="menu-trigger" for="show-menu">
+    <span class="menu-bar menu-bar-1 white"></span>
+    <span class="menu-bar menu-bar-2 white"></span>
+    <span class="menu-bar menu-bar-3 white"></span>
+  </label>
+  <div class="menu container">
+    <ul>
+      <li><a class="logo" id="home" href="../index.html"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzNyIgdmlld0JveD0iMCAwIDMwIDM3Ij4KICAgIDxnIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTIyLjAxIDcuODg2VjUuNDUyYy45Ny0uNTExIDEuNDc4LTEuNDYgMS40NzgtMi41MzFDMjMuNDg4IDEuMzE0IDIyLjE4IDAgMjAuNTgxIDBjLTEuNTk4IDAtMi45MDYgMS4zMTQtMi45MDYgMi45MiAwIDEuMDcxLjQ2IDEuOTk2IDEuNDI5IDIuNTA3djIuNDU5aC04LjcyVjUuNDI3YTIuOTI3IDIuOTI3IDAgMCAwIDEuNDMtMi41MDZDMTEuODEzIDEuMzE0IDEwLjUwNCAwIDguOTA2IDAgNy4zMDggMCA2IDEuMzE0IDYgMi45MmEyLjkgMi45IDAgMCAwIDEuNDc4IDIuNTMydjIuNDM0SDIyLjAxeiIvPgogICAgICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTI2LjM4OSAxMGMxLjk0NCAwIDMuNTE4IDEuNTYzIDMuNjExIDMuNDAxVjM3bC0zLjYxMS0zLjg2SDMuNTE5QzEuNTc0IDMzLjE0IDAgMzEuNjY4IDAgMjkuNzM3VjEzLjQwMUMwIDExLjU2MyAxLjU3NCAxMCAzLjUxOSAxMGgyMi44N3pNMTEuNSAxOGgtM2MtLjgyNSAwLTEuNS42NzUtMS41IDEuNXYzYzAgLjgyNS42NzUgMS41IDEuNSAxLjVoM2MuODI1IDAgMS41LS42NzUgMS41LTEuNXYtM2MwLS44MjUtLjY3NS0xLjUtMS41LTEuNXptMTAgMGgtM2MtLjgyNSAwLTEuNS42NzUtMS41IDEuNXYzYzAgLjgyNS42NzUgMS41IDEuNSAxLjVoM2MuODI1IDAgMS41LS42NzUgMS41LTEuNXYtM2MwLS44MjUtLjY3NS0xLjUtMS41LTEuNXoiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="Discord Bots" title="Discord Bots"></a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../tag/music.html">Music Bots</a></li>
+      <li><a href="../api/docs.html">API</a></li>
+      <li><a href="https://discord.gg/EYHTgJX">Join Discord</a></li>
+      <li><a href="https://medium.com/discord-bots">Blog</a></li>
+      <li><a href="../servers.html">Discord Servers</a></li>
+        <li><a href="https://discordapp.com/oauth2/authorize?client_id=264434993625956352&scope=identify&state=L2FwaS9kb2Nz&redirect_uri=https%3A%2F%2Fdiscordbots.org%2Flogin%2Fcallback&response_type=code">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<script>
+// const Http = new XMLHttpRequest();
+// const url='https://discordbots.org/api/weekend';
+// Http.open("GET", url);
+// Http.send();
+// Http.onreadystatechange=(e)=>{
+// var a = Http.responseText
+// var b = JSON.parse(a);
+// if (b.is_weekend === true) {
+//   document.getElementById("doublevoting").style.display = "block";
+// }
+// }
+</script>
+  <section class="wrap-whole">
+    <section class="vertical-nav-bar no-select">
+      <div class="menu-container">
+        <div class="main-nav-link"><div class="title-section-api">API Documentation</div></div>
+        <div class="main-nav-link">
+          <a href="#intro" data-goto="intro"><div class="active">Intro</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#mybots" data-goto="mybots"><div>My Bots</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#reference" data-goto="reference"><div>Reference</div></a>
+        </div>
+        <div class="sectiondivider"></div>
+        <div class="main-nav-link">
+          <div class="title-section-api">Tools</div>
+        </div>
+        <div class="main-nav-link">
+          <a href="#jslib" data-goto="jslib"><div>JavaScript Library</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#javalib" data-goto="javalib"><div>Java Library</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#pylib" data-goto="pylib"><div>Python Library</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#dotnetlib" data-goto="dotnetlib"><div>C# / .NET Library</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#golib" data-goto="golib"><div>Go Library</div></a>
+        </div>
+        <div class="sectiondivider"></div>
+        <div class="main-nav-link"><div class="title-section-api">Resources</div></div>
+        <div class="main-nav-link">
+          <a href="#users" data-goto="users"><div>Users</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#bots" data-goto="bots"><div>Bots</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#widgets" data-goto="widgets"><div>Widgets</div></a>
+        </div>
+        <div class="sectiondivider"></div>
+        <div class="main-nav-link"><div class="title-section-api">Topics</div></div>
+        <div class="main-nav-link">
+          <a href="#ratelimits" data-goto="ratelimits"><div>Ratelimits</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#votes" data-goto="votes"><div>Votes</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#votes-multiplier" data-goto="votes-multiplier"><div>Voting Multiplier</div></a>
+        </div>
+        <div class="main-nav-link">
+          <a href="#webhooks" data-goto="webhooks"><div>Webhooks</div></a>
+        </div>
+      </div>
+    </section>
+    <section data-page="intro" class="container__main">
+      <header class="container__header">
+        <h1>Introduction</h1>
+      </header>
+      <article class="container__content">
+        <p>These developer pages document how to use our API to help you create and grow awesome bots for your community!</p>
+      </article>
+      <header class="container__header">
+        <h1>Getting Help</h1>
+      </header>
+      <article class="container__content">
+        <p>If you need some help or think you have spotted a problem with our API you can talk to us in our #api channel in our <a href="https://discordapp.com/invite/EYHTgJX">discord server</a>. In the server you can ask questions about our official <a href="#">API Libraries</a> or general queries about the API. </p>
+      </article>
+    </section>
+    <section data-page="reference" class="container__main">
+    <header class="container__header">
+        <h1>API Reference</h1>
+      </header>
+      <article class="container__content">
+      <p>Our API is a HTTPS/REST for general operations such as sending POST requests and receiving GET requests</p>
+      <table class="exampleTable">
+      <tr class="trHeader">
+        <th colspan="1">Base URL</th>
+      </tr>
+      <tr>
+        <td>https://discordbots.org/api</td>
+      </tr>
+      </table>
+      </article>
+      <header class="container__header">
+        <h1>Authentication</h1>
+      </header>
+      <article class="container__content">
+      <p>To access our API you need to authorize yourself, this can be done by using your discord bot list token. Your token can be obtained from the <a href="#mybots">My Bots</a> page.</p>
+      <p>Authentication is performed with the <code>Authorization</code> HTTP header in the format <code>Authorization: TOKEN</code></p>
+      <table class="exampleTable">
+      <tr class="trHeader">
+        <th colspan="2">Example Authorization Header</th>
+      </tr>
+      <tr>
+        <td>Authorization:</td>
+        <td>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2NDgxMTYxMzcwODc0Njc1MiIsImJvdCI6dHJ1ZSwiaWF0IjoxNDgzMDk5MjAwfQ.8tpNASxdSsfkVF7YparhyV1Ouy5ORQ3AM2jitd_Y-PI</td>
+      </tr>
+      </table>
+      </article>
+    </section>
+    <section data-page="wrappers" class="container__main">
+      <header class="container__header">
+        <h1>API Libraries</h1>
+      </header>
+      <article class="container__content">
+        <p>We currently have three different official libraries to help you save time in your bot!</p>
+        <ul class="libraries">
+          <li><a href="#">JavaScript Library</a></li>
+          <li><a href="https://github.com/DiscordBotList/DBL-Java-Library">Java Library</a></li>
+          <li><a href="#">Python Library</a></li>
+        </ul>
+        </article>
+        <header class="container__header">
+            <h1>JavaScript Library Usage</h1>
+        </header>
+        <header class="container__header">
+            <h1>Java Library Usage</h1>
+        </header>
+        <header class="container__header">
+            <h1>Python Library Usage</h1>
+        </header>
+         <header class="container__header">
+            <h1>Unofficial Libraries</h1>
+         </header>
+            <article class="container__content">
+            <p>We currently don't endorse any unofficial libraries for the API, but if you think you could contribute to our current libraries check out our <a href="https://github.com/DiscordBotList">github repos</a> and maybe submit a PR. If you think we should endorse your unofficial library for a language we don't already support hit us up at <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="562523262639242216323f25353924323439222578392431">[email&#160;protected]</a></code> or DM a Website Administrator</p>
+            </article>
+    </section>
+        <section data-page="jslib" class="container__main">
+      <header class="container__header">
+        <h1>JavaScript Library</h1>
+      </header>
+            <article class="container__content">
+        <p>This is our official JavaScript Library for discordbots.org, if you have any issues please submit an issue on our github.</p>
+        <ul class="libraries"><li><a href="https://github.com/DiscordBotList/dblapi.js"><p>Github Link</p></a></li></ul>
+      </article>
+             <header class="container__header">
+        <h1>Installation</h1>
+      </header>
+      <article class="container__content">
+      <code>npm install dblapi.js</code>
+      </article>
+           <header class="container__header">
+        <h1>Example</h1>
+      </header>
+      <article class="container__content">
+      <p class="subtitleapi">Example of posting server count with supported libraries (Discord.js and Eris)</p>
+      <pre>const Discord = require("discord.js");
+const client = new Discord.Client();
+const DBL = require("dblapi.js");
+const dbl = new DBL('Your discordbots.org token', client);
+// Optional events
+dbl.on('posted', () => {
+  console.log('Server count posted!');
+})
+dbl.on('error', e => {
+ console.log(`Oops! ${e}`);
+})</pre>
+      <p class="subtitleapi">Example of using webhooks to receive vote updates</p>
+      <pre>const DBL = require('dblapi.js');
+const dbl = new DBL(yourDBLTokenHere, { webhookPort: 5000, webhookAuth: 'password' });
+dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
+});
+dbl.webhook.on('vote', vote => {
+  console.log(`User with ID ${vote.user} just voted!`);
+});</pre>
+    </article>
+    <header class="container__header">
+        <h1>Constructor</h1>
+      </header>
+    <article class="container__content">
+      <p class="subtitleapi"><code class="highlightGuide">new DBL(<span class="lowfade">token</span>, <span class="lowfade">[options]</span>, <span class="lowfade">[client]</span>)</code></p>
+      <p class="subtitleapi">or</p>
+      <p class="subtitleapi"><code class="highlightGuide">new DBL(<span class="lowfade">token</span>, <span class="lowfade">[client]</span>)</code></p>
+      <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>token</td>
+            <td>String</td>
+            <td>No</td>
+            <td></td>
+            <td>Your bot's discordbots.org token. Obtainable from the My Bots page.</td>
+          </tr>
+          <tr>
+            <td>options</td>
+            <td>Object</td>
+            <td>Yes</td>
+            <td><code>{}</code></td>
+            <td>DBL client options listed below</td>
+          </tr>
+          <tr>
+            <td>options.statsInterval</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td><code>1800000</code> (30 minutes)</td>
+            <td>How often the autoposter should post stats in ms. May not be smaller than 900000 (15 minutes).</td>
+          </tr>
+          <tr>
+            <td>options.webhookPort</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td></td>
+            <td>The port to run the webhook on. Will activate webhook when set.</td>
+          </tr>
+          <tr>
+            <td>options.webhookAuth</td>
+            <td>String</td>
+            <td>Yes</td>
+            <td></td>
+            <td>The string for Authorization you set on the site for verification.</td>
+          </tr>
+          <tr>
+            <td>options.webhookPath</td>
+            <td>String</td>
+            <td>Yes</td>
+            <td><code>'/dblwebhook'</code></td>
+            <td>The path for the webhook request.</td>
+          </tr>
+          <tr>
+            <td>options.webhookServer</td>
+            <td>http.Server</td>
+            <td>Yes</td>
+            <td></td>
+            <td>An existing server to run the webhook on. Will activate webhook when set.</td>
+          </tr>
+          <tr>
+            <td>client</td>
+            <td>Client</td>
+            <td>Yes</td>
+            <td></td>
+            <td>A discord.js or Eris client. If set, the module will automatically handle posting of the bot's server count.</td>
+          </tr>
+        </table>
+        <p>If you don't have options to set but want to set the client. You can put the client where options are.</p>
+    </article>
+    <header class="container__header">
+        <h1>Methods</h1>
+      </header>
+    <article class="container__content">
+      <p class="subtitleapi"><code class="highlightGuide">.postStats(<span class="lowfade">serverCount</span>, <span class="lowfade">[shardId]</span>, <span class="lowfade">[shardCount]</span>)</code></p>
+  <p>Post Stats to Discord Bot List.</p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>serverCount</td>
+            <td>Number</td>
+            <td>No</td>
+            <td>The server count of your bot.</td>
+          </tr>
+          <tr>
+            <td>shardId</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td>The ID of this shard.</td>
+          </tr>
+          <tr>
+            <td>shardCount</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td>The count of all shards of your bot.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>client.on('ready', () => {
+    setInterval(() => {
+        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+    }, 1800000);
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.getStats(<span class="lowfade">id</span>)</code></p>
+  <p>Gets stats from a bot. See more: <a href="#bots" data-goto="bots">Get Bot's Stats</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>Yes</td>
+            <td>The ID of the current bot (requires client to be set)</td>
+            <td>The ID of the bot you want to get the stats from.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Object&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.getStats("264811613708746752").then(stats => {
+    console.log(stats) // {"server_count":2,"shards":[]}
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.getBot(<span class="lowfade">id</span>)</code></p>
+  <p>Gets information about a bot. See more: <a href="#bots" data-goto="bots">Get Bot</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>Yes</td>
+            <td>The ID of the current bot (requires client to be set)</td>
+            <td>The ID of the bot you want to get the information from.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Object&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.getBot("264811613708746752").then(bot => {
+    console.log(bot.username) // "Luca"
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.getUser(<span class="lowfade">id</span>)</code></p>
+  <p>Gets information about a user. See more: <a href="#users" data-goto="users">Get User</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>No</td>
+            <td>The ID of the user you want to get the information from.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Object&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.getUser("95579865788456960").then(user => {
+    console.log(user.username) // "Tonkku"
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.getBots(<span class="lowfade">[query]</span>)</code></p>
+  <p>Gets a list of bots matching your query. See more: <a href="#bots" data-goto="bots">Get Bots</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Default</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>query</td>
+            <td>Object</td>
+            <td>Yes</td>
+            <td><code>{}</code></td>
+            <td>The query for the search.</td>
+          </tr>
+          <tr>
+            <td>query.limit</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td>50</td>
+            <td>The amount of bots to return. Max. 500</td>
+          </tr>
+          <tr>
+            <td>query.offset</td>
+            <td>Number</td>
+            <td>Yes</td>
+            <td>0</td>
+            <td>Amount of bots to skip</td>
+          </tr>
+          <tr>
+            <td>query.search</td>
+            <td>String</td>
+            <td>Yes</td>
+            <td></td>
+            <td>A search string in the format of <code>field: value field2: value2</code></td>
+          </tr>
+          <tr>
+            <td>query.sort</td>
+            <td>String</td>
+            <td>Yes</td>
+            <td></td>
+            <td>The field to sort by. Prefix with <code>-</code> to reverse the order</td>
+          </tr>
+          <tr>
+            <td>query.fields</td>
+            <td>String</td>
+            <td>Yes</td>
+            <td>All fields</td>
+            <td>A comma separated list of fields to show.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Object&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.getBots({sort: 'points', limit: 5}).then(bots => {
+    console.log(bots.results.length) // 5
+    console.log(bots.results[0].username) // "Pokécord"
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.getVotes()</code></p>
+  <p>Gets votes from your bot. See more: <a href="#bots" data-goto="bots">Get Bot's Last 1000 Votes</a></p>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Object&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.getVotes().then(votes => {
+    if (votes.find(vote => vote.id == "95579865788456960")) console.log("Tonkku has voted!!!")
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.hasVoted(<span class="lowfade">id</span>)</code></p>
+  <p>Returns true if a user has voted for your bot in the last 24h. See more: <a href="#bots" data-goto="bots">Individual User Id Voting Check for the past 24 hours.</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Arguments</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Optional</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>No</td>
+            <td>The ID of the user to check for.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Boolean&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.hasVoted("95579865788456960").then(voted => {
+    if (voted) console.log("Tonkku has voted!!!")
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">.isWeekend()</code></p>
+  <p>Returns true if the weekend multiplier is currently active. See more: <a href="#votes-multiplier" data-goto="bots">Voting Multiplier</a></p>
+        <p class="subsubtitleapi"></p>
+  <p><span class="subsubtitleapi">Returns: </span>Promise&lt;Boolean&gt;</p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.isWeekend().then(weekend => {
+    if (weekend) console.log("Woo! Multiplier time!")
+});</pre>
+     </article>
+     <header class="container__header">
+        <h1>Autoposter Events</h1>
+      </header>
+    <article class="container__content">
+      <p class="subtitleapi"><code class="highlightGuide">posted</code></p>
+  <p>Emitted when the stats have been posted successfully by the autoposter.</a></p>
+        <p class="subsubtitleapi"></p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.webhook.on('posted', () => {
+  console.log('Server count posted!');
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">error</code></p>
+  <p>Emitted when the autoposter post request failed.</a></p>
+        <p class="subsubtitleapi"></p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.webhook.on('error', e => {
+  console.log(`Oops! ${e}`);
+});</pre>
+    </article>
+     <header class="container__header">
+        <h1>Webhook Events</h1>
+      </header>
+    <article class="container__content">
+      <p class="subtitleapi"><code class="highlightGuide">ready</code></p>
+  <p>Emitted when the webhook is ready to listen.</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Parameters</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>hostname</td>
+            <td>String</td>
+            <td>The hostname of the webhook server</td>
+          </tr>
+          <tr>
+            <td>port</td>
+            <td>Number</td>
+            <td>The port the webhook server is running on</td>
+          </tr>
+          <tr>
+            <td>path</td>
+            <td>String</td>
+            <td>The path for the webhook</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
+});</pre>
+<p class="subtitleapi"><code class="highlightGuide">vote</code></p>
+  <p>Emitted when the webhook has received a vote.</a></p>
+  <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="5">Parameters</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>bot</td>
+            <td>Snowflake</td>
+            <td>Id of the bot that was voted for.</td>
+          </tr>
+          <tr>
+            <td>user</td>
+            <td>Snowflake</td>
+            <td>Id of the user that voted.</td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>String</td>
+            <td>Type of the vote. Is always "upvote" except when using the test button it's "test".</td>
+          </tr>
+          <tr>
+            <td>isWeekend</td>
+            <td>Boolean</td>
+            <td>Whether the weekend multiplier is in effect, meaning users votes count as two.</td>
+          </tr>
+          <tr>
+            <td>query</td>
+            <td>Object</td>
+            <td>The possible querystring parameters from the vote page.</td>
+          </tr>
+        </table>
+        <p class="subsubtitleapi"></p>
+  <p class="subsubtitleapi">Example</p>
+  <pre>dbl.webhook.on('vote', vote => {
+  console.log(`User with ID ${vote.user} just voted!`);
+});</pre>
+    </article>
+    <header class="container__header">
+        <h1>More examples</h1>
+      </header>
+      <article class="container__content">
+      <p class="subtitleapi">Example of linking webhooks with an existing http server (like express)</p>
+      <pre>const DBL = require('dblapi.js');
+const express = require('express');
+const http = require('http');
+const app = express();
+const server = http.createServer(app);
+const dbl = new DBL(yourDBLTokenHere, { webhookAuth: 'password', webhookServer: server });
+dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running with path ${hook.path}`);
+});
+dbl.webhook.on('vote', vote => {
+  console.log(`User with ID ${vote.user} just voted!`);
+});
+app.get('/', (req, res) => {
+  // ...
+});
+server.listen(5000, () => {
+  console.log('Listening');
+});
+</pre>
+    </article>
+    </section>
+    <section data-page="javalib" class="container__main">
+      <header class="container__header">
+        <h1>Java Library</h1>
+      </header>
+      <article class="container__content">
+      This is our official Java Library for discordbots.org, if you have any issues/bugs please submit an issue on our github.
+      <ul class="libraries"><li><a href="https://github.com/DiscordBotList/DBL-Java-Library"><p>Github Link</p></a></li></ul>
+      </article>
+      <header class="container__header">
+        <h1>Usage</h1>
+      </header>
+        <article class="container__content" >
+        <div id="javalibreak">
+          Please refer to the github docs
+        </div>
+        </article>
+            <header class="container__header">
+            <h1>Unofficial Libraries</h1>
+         </header>
+         <article class="container__content">
+            <p>We currently don't endorse any unofficial libraries for the API, but if you think you could contribute to our current libraries check out our <a href="https://github.com/DiscordBotList">github repos</a> and maybe submit a PR. If you think we should endorse your unofficial library for a language we don't already support hit us up at <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9caccc9c9d6cbcdf9ddd0cadad6cbdddbd6cdca97d6cbde">[email&#160;protected]</a></code> or DM a Website Administrator</p>
+            </article>
+    </section>
+    <section data-page="golib" class="container__main">
+      <header class="container__header">
+        <h1>Go Library</h1>
+      </header>
+      <article class="container__content">
+      This is our official Go Library for discordbots.org, if you have any issues/bugs please submit an issue on our github.
+      <ul class="libraries"><li><a href="https://github.com/DiscordBotList/dblgo"><p>Github Link</p></a></li></ul>
+      </article>
+      <header class="container__header">
+        <h1>Usage</h1>
+      </header>
+        <article class="container__content" >
+        <div id="javalibreak">
+          Please refer to the github docs
+        </div>
+        </article>
+            <header class="container__header">
+            <h1>Unofficial Libraries</h1>
+         </header>
+         <article class="container__content">
+            <p>We currently don't endorse any unofficial libraries for the API, but if you think you could contribute to our current libraries check out our <a href="https://github.com/DiscordBotList">github repos</a> and maybe submit a PR. If you think we should endorse your unofficial library for a language we don't already support hit us up at <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c0f090c0c130e083c18150f1f130e181e13080f52130e1b">[email&#160;protected]</a></code> or DM a Website Administrator</p>
+            </article>
+    </section>
+    <section data-page="pylib" class="container__main">
+      <header class="container__header">
+        <h1>Python Library</h1>
+      </header>
+      <article class="container__content">
+        <p>This is our official Python Library for discordbots.org, if you have any issues please submit an issue on our github. For full documentation please visit <a href="http://dblpy.readthedocs.io/en/v0.1.3/">this link</a></p>
+        <ul class="libraries"><li><a href="https://github.com/DiscordBotList/DBL-Python-Library"><p>Github Link</p></a></li></ul>
+      </article>
+       <header class="container__header">
+        <h1>Installation</h1>
+      </header>
+      <article class="container__content">
+      <p class="subtitleapi">Install via pip (recommended)</p>
+      <code>pip install dblpy</code>
+      <p class="subtitleapi">Install from source</p>
+      <pre>git clone https://github.com/DiscordBotList/DBL-Python-Library
+cd DBL-Python-Library
+pip install -R requirements.txt</pre>
+      </article>
+<header class="container__header">
+        <h1>Example</h1>
+      </header>
+  <article class="container__content">
+  <pre>import dbl
+import discord
+from discord.ext import commands
+import aiohttp
+import asyncio
+import logging
+class DiscordBotsOrgAPI:
+    """Handles interactions with the discordbots.org API"""
+    def __init__(self, bot):
+        self.bot = bot
+        self.token = 'dbl_token'  #  set this to your DBL token
+        self.dblpy = dbl.Client(self.bot, self.token)
+        self.bot.loop.create_task(self.update_stats())
+    async def update_stats(self):
+        """This function runs every 30 minutes to automatically update your server count"""
+        while True:
+            logger.info('attempting to post server count')
+            try:
+                await self.dblpy.post_server_count()
+                logger.info('posted server count ({})'.format(len(self.bot.guilds)))
+            except Exception as e:
+                logger.exception('Failed to post server count\n{}: {}'.format(type(e).__name__, e))
+            await asyncio.sleep(1800)
+def setup(bot):
+    global logger
+    logger = logging.getLogger('bot')
+    bot.add_cog(DiscordBotsOrgAPI(bot))</pre>
+  </article>
+        <header class="container__header">
+            <h1>Unofficial Libraries</h1>
+         </header>
+         <article class="container__content">
+            <p>We currently don't endorse any unofficial libraries for the API, but if you think you could contribute to our current libraries check out our <a href="https://github.com/DiscordBotList">github repos</a> and maybe submit a PR. If you think we should endorse your unofficial library for a language we don't already support hit us up at <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afdcdadfdfc0dddbefcbc6dcccc0ddcbcdc0dbdc81c0ddc8">[email&#160;protected]</a></code> or DM a Website Administrator</p>
+            </article>
+    </section>
+    <section data-page="users" class="container__main">
+      <header class="container__header">
+        <h1>User Object</h1>
+      </header>
+      <article class="container__content">
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">User Structure</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>The id of the user</td>
+          </tr>
+          <tr>
+            <td>username</td>
+            <td>String</td>
+            <td>The username of the user</td>
+          </tr>
+          <tr>
+            <td>discriminator</td>
+            <td>String</td>
+            <td>The discriminator of the user</td>
+          </tr>
+          <tr>
+            <td>avatar?</td>
+            <td>String</td>
+            <td>The avatar hash of the user's avatar</td>
+          </tr>
+          <tr>
+            <td>defAvatar</td>
+            <td>String</td>
+            <td>The cdn hash of the user's avatar if the user has none</td>
+          </tr>
+          <tr>
+            <td>bio?</td>
+            <td>String</td>
+            <td>The bio of the user</td>
+          </tr>
+          <tr>
+            <td>banner?</td>
+            <td>String</td>
+            <td>The banner image url of the user</td>
+          </tr>
+          <tr>
+            <td>social</td>
+            <td>Object</td>
+            <td>The social usernames of the user</td>
+          </tr>
+          <tr>
+            <td>social.youtube?</td>
+            <td>String</td>
+            <td>The youtube channel id of the user</td>
+          </tr>
+          <tr>
+            <td>social.reddit?</td>
+            <td>String</td>
+            <td>The reddit username of the user</td>
+          </tr>
+          <tr>
+            <td>social.twitter?</td>
+            <td>String</td>
+            <td>The twitter username of the user</td>
+          </tr>
+          <tr>
+            <td>social.instagram?</td>
+            <td>String</td>
+            <td>The instagram username of the user</td>
+          </tr>
+          <tr>
+            <td>social.github?</td>
+            <td>String</td>
+            <td>The github username of the user</td>
+          </tr>
+          <tr>
+            <td>color?</td>
+            <td>String</td>
+            <td>The custom hex color of the user</td>
+          </tr>
+          <tr>
+            <td>supporter</td>
+            <td>Boolean</td>
+            <td>The supporter status of the user</td>
+          </tr>
+          <tr>
+            <td>certifiedDev</td>
+            <td>Boolean</td>
+            <td>The certified status of the user</td>
+          </tr>
+          <tr>
+            <td>mod</td>
+            <td>Boolean</td>
+            <td>The mod status of the user</td>
+          </tr>
+          <tr>
+            <td>webMod</td>
+            <td>Boolean</td>
+            <td>The website moderator status of the user</td>
+          </tr>
+          <tr>
+            <td>admin</td>
+            <td>Boolean</td>
+            <td>The admin status of the user</td>
+          </tr>
+        </table>
+      </article>
+      <header class="container__header">
+        <h1>Get User</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to gain information about a particular user</p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/users/<span class="lowfade">{user.id}</span></code></span>
+      </article>
+    </section>
+    <section data-page="bots" class="container__main">
+      <header class="container__header">
+        <h1>Bot Object</h1>
+      </header>
+      <article class="container__content">
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Bot Structure</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Snowflake</td>
+            <td>The id of the bot</td>
+          </tr>
+          <tr>
+            <td>username</td>
+            <td>String</td>
+            <td>The username of the bot</td>
+          </tr>
+          <tr>
+            <td>discriminator</td>
+            <td>String</td>
+            <td>The discriminator of the bot</td>
+          </tr>
+          <tr>
+            <td>avatar?</td>
+            <td>String</td>
+            <td>The avatar hash of the bot's avatar</td>
+          </tr>
+          <tr>
+            <td>defAvatar</td>
+            <td>String</td>
+            <td>The cdn hash of the bot's avatar if the bot has none</td>
+          </tr>
+          <tr>
+            <td>lib</td>
+            <td>String</td>
+            <td>The library of the bot</td>
+          </tr>
+          <tr>
+            <td>prefix</td>
+            <td>String</td>
+            <td>The prefix of the bot</td>
+          </tr>
+          <tr>
+            <td>shortdesc</td>
+            <td>String</td>
+            <td>The short description of the bot</td>
+          </tr>
+          <tr>
+            <td>longdesc?</td>
+            <td>String</td>
+            <td>The long description of the bot. Can contain HTML and/or Markdown</td>
+          </tr>
+          <tr>
+            <td>tags</td>
+            <td>Array of Strings</td>
+            <td>The tags of the bot</td>
+          </tr>
+          <tr>
+            <td>website?</td>
+            <td>String</td>
+            <td>The website url of the bot</td>
+          </tr>
+          <tr>
+            <td>support?</td>
+            <td>String</td>
+            <td>The support server invite code of the bot</td>
+          </tr>
+          <tr>
+            <td>github?</td>
+            <td>String</td>
+            <td>The link to the github repo of the bot</td>
+          </tr>
+          <tr>
+            <td>owners</td>
+            <td>Array of Snowflakes</td>
+            <td>The owners of the bot. First one in the array is the main owner</td>
+          </tr>
+          <tr>
+            <td>invite?</td>
+            <td>String</td>
+            <td>The custom bot invite url of the bot</td>
+          </tr>
+          <tr>
+            <td>date</td>
+            <td>Date</td>
+            <td>The date when the bot was approved</td>
+          </tr>
+          <tr>
+            <td>certifiedBot</td>
+            <td>Boolean</td>
+            <td>The certified status of the bot</td>
+          </tr>
+          <tr>
+            <td>vanity?</td>
+            <td>String</td>
+            <td>The vanity url of the bot</td>
+          </tr>
+          <tr>
+            <td>points</td>
+            <td>Number</td>
+            <td>The amount of upvotes the bot has</td>
+          </tr>
+        </table>
+      </article>
+      <header class="container__header">
+        <h1>Get Bots</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to gain information about different bots</p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/bots</code></span>
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Query String Params</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Default</td>
+          </tr>
+          <tr>
+            <td>limit</td>
+            <td>Number</td>
+            <td>The amount of bots to return. Max. 500</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>offset</td>
+            <td>Number</td>
+            <td>Amount of bots to skip</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>search</td>
+            <td>String</td>
+            <td>A search string in the format of <code>field: value field2: value2</code></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>sort</td>
+            <td>String</td>
+            <td>The field to sort by. Prefix with <code>-</code> to reverse the order</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>fields</td>
+            <td>String</td>
+            <td>A comma separated list of fields to show.</td>
+            <td>All fields</td>
+          </tr>
+        </table>
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Response fields</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>results</td>
+            <td>Array of bot objects</td>
+            <td>The matching bots</td>
+          </tr>
+          <tr>
+            <td>limit</td>
+            <td>Number</td>
+            <td>The limit used</td>
+          </tr>
+          <tr>
+            <td>offset</td>
+            <td>Number</td>
+            <td>The offset used</td>
+          </tr>
+          <tr>
+            <td>count</td>
+            <td>Number</td>
+            <td>The length of the results array</td>
+          </tr>
+          <tr>
+            <td>total</td>
+            <td>Number</td>
+            <td>The total number of bots matching your search</td>
+          </tr>
+        </table>
+      </article>
+      <header class="container__header">
+        <h1>Get Bot</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to gain information about a specific bot</p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/bots/<span class="lowfade">{bot.id}</span></code></span>
+      </article>
+      <header class="container__header">
+        <h1>Get Bot's Last 1000 Votes</h1>
+      </header>
+      <article class="container__content">
+        <p style="color:#F04747 !important;">IF YOU HAVE OVER 1000 VOTES PER MONTH YOU HAVE TO USE THE WEBHOOKS AND CAN NOT USE THIS</p><br/>
+        <p>Use this endpoint to see who have upvoted your bot</p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/bots/<span class="lowfade">{bot.id?}</span>/votes</code></span><p></p>
+        <span class="highlightedThing _green">returns</span><span class="highlightGuide">An Array of simple user objects</span>
+      </article><header class="container__header">
+        <h1>Individual User Id Voting Check for the past 24 hours.</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to see who have upvoted your bot in the past 24 hours. It is safe to use this even if you have over 1k votes. </p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/bots/<span class="lowfade">{bot.id?}</span>/check</code></span>
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Query String Params</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>userId</td>
+            <td>Number</td>
+            <td>User id of the discord user</td>
+          </tr>
+        </table>
+        <span class="highlightedThing _green">returns</span><span class="highlightGuide"><code>{voted: 1}</code> or <code>{voted: 0}</code></span>
+      </article>
+      <header class="container__header">
+        <h1>Get Bot's Stats</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to gain information about a specific bot's stats</p>
+        <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/bots/<span class="lowfade">{bot.id}</span>/stats</code></span>
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">Response fields</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td>server_count?</td>
+            <td>Number</td>
+            <td>The amount of servers the bot is in</td>
+          </tr>
+          <tr>
+            <td>shards</td>
+            <td>Array</td>
+            <td>The amount of servers the bot is in per shard. Always present but can be empty</td>
+          </tr>
+          <tr>
+            <td>shard_count?</td>
+            <td>Number</td>
+            <td>The amount of shards a bot has</td>
+          </tr>
+        </table>
+      </article>
+      <header class="container__header">
+        <h1>Post Bot's Stats</h1>
+      </header>
+      <article class="container__content">
+        <p>Use this endpoint to post your bot's stats</p>
+        <span class="highlightedThing _orange">POST</span><span class="highlightGuide"><code>/bots/<span class="lowfade">{bot.id?}</span>/stats</code></span>
+        <table class="exampleTable">
+          <tr class="trHeader">
+            <th colspan="4">JSON Params</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>server_count</td>
+            <td>Number or Array of Numbers</td>
+            <td>The amount of servers the bot is in. If an Array it acts like <code>shards</code></td>
+            <td>Yes (or <code>shards</code>)</td>
+          </tr>
+          <tr>
+            <td>shards</td>
+            <td>Array of Numbers</td>
+            <td>The amount of servers the bot is in per shard.</td>
+            <td>No (unless <code>server_count</code> is not set)</td>
+          </tr>
+          <tr>
+            <td>shard_id</td>
+            <td>Number</td>
+            <td>The zero-indexed id of the shard posting. Makes server_count set the shard specific server count</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>shard_count</td>
+            <td>Number</td>
+            <td>The amount of shards the bot has</td>
+            <td>No</td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section data-page="widgets" class="container__main">
+      <header class="container__header">
+        <h1>Widgets</h1>
+      </header>
+    <article class="container__content">
+    <p>Widgets are images that can display your bots stats on your own website! On this page we will tell you how to access and customise them.</p>
+    </article>
+    <header class="container__header">
+        <h1>Usage</h1>
+      </header>
+      <article class="container__content">
+      <p>To use the widget, you can insert the following link as an image into your website / documentation. <pre>https://discordbots.org/api/widget/:ID.svg</pre></p>
+      <p class="subtitleapi">Preview</p>
+      <img src="../api/widget/264811613708746752.svg" style="margin: 10px">
+      <p>In this example we use <code>.svg</code> but it can also be a <code>.png</code>. We recommend SVG for the best quality. That is an example of the large widget. There are also 5 small widgets which can be generated by editing the URL an example of a small widget is this <pre>https://discordbots.org/api/widget/owner/:ID.svg</pre></p>
+      <p class="subtitleapi">Preview</p>
+      <img src="../api/widget/owner/264811613708746752.svg" style="margin: 10px">
+      <p>The <code>/owner/</code> can be replaced with the following to get the 4 other smaller widgets: <code>status</code>,<code>upvotes</code>,<code>servers</code>  and <code>lib</code>. You can also append a querystring to hide the avatar on the smaller widgets: <code>?noavatar=true</code></p>
+      <p class="subtitleapi">Preview</p>
+      <img src="../api/widget/owner/264811613708746752.svg?noavatar=true" style="margin: 10px">
+      </article>
+      <header class="container__header">
+        <h1>Customization</h1>
+      </header>
+      <article class="container__content">
+      <p>The current sections of the widget available for customization are as follows</p>
+      <table class="exampleTable">
+      <tr class="trHeader">
+            <th colspan="4">Widget Querystring Parameters</th>
+          </tr>
+          <tr class="trSubHeader">
+            <td>Parameter</td>
+            <td>Large Widget</td>
+            <td>Small Widget</td>
+            <td>Value</td>
+          </tr>
+          <tr>
+            <td>topcolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>middlecolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>usernamecolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>certifiedcolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>datacolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>labelcolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>highlightcolor</td>
+            <td>✓</td>
+            <td></td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>avatarbg</td>
+            <td></td>
+            <td>✓</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>leftcolor</td>
+            <td></td>
+            <td>✓</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>rightcolor</td>
+            <td></td>
+            <td>✓</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>lefttextcolor</td>
+            <td></td>
+            <td>✓</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>righttextcolor</td>
+            <td></td>
+            <td>✓</td>
+            <td>Hexadecimal</td>
+          </tr>
+      </table>
+      <p class="subtitleapi">Example of Customization</p>
+      <p>This is an example of changing the colors of the large widget <pre>https://discordbots.org/api/widget/270904126974590976.svg?usernamecolor=FFFFFF&topcolor=000000</pre></p>
+      <p>This is a preview of the examples output.</p>
+      <img src="https://discordbots.org/api/widget/270904126974590976.svg?usernamecolor=FFFFFF&topcolor=000000">
+      </article>
+    </section>
+    <section data-page="ratelimits" class="container__main">
+      <header class="container__header">
+        <h1>Rate Limits</h1>
+      </header>
+    <article class="container__content">
+    <p>The HTTP API implements a process for limiting and preventing spam requests. API users that regularly hit and ignore the limit will be blocked from our platform. These rate limits are in place to help prevent the abuse and overload of our services.</p>
+    <p>Rate limits are applied globally on all routes</p>
+    <table class="exampleTable">
+      <tr class="trHeader">
+        <th colspan="4">Rate Limits</th>
+      </tr>
+       <tr class="trSubHeader">
+            <td>Route</td>
+            <td>Request Type</td>
+            <td>Requests Allowed Per Minute</td>
+            <td>Punishment if Exceeded</td>
+          </tr>
+      <tr>
+          <td>/bots/*</td>
+          <td>ANY</td>
+          <td>60</td>
+          <td>1 Hour Block</td>
+      </tr>
+      </table>
+    </article>
+    <header class="container__header">
+      <h1>Exceeding a Rate Limit</h1>
+    </header>
+    <article class="container__content">
+    <p>If you exceed the set rate limit for the API you will receive a HTTP 429 and be blocked from posting to the API for one hour.</p>
+    <table class="exampleTable">
+      <tr class="trHeader">
+        <th colspan="3">Rate Limit Response Structure</th>
+      </tr>
+       <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+      <tr>
+          <td>retry-after</td>
+          <td>integer</td>
+          <td>Indicates how long the timeout period is/when you will be able to send requests again</td>
+      </tr>
+      </table>
+    </article>
+    </section>
+    <section data-page="votes" class="container__main">
+      <header class="container__header">
+        <p style="color:#F04747 !important;">IF YOU HAVE OVER 1000 VOTES PER MONTH YOU HAVE TO USE THE WEBHOOKS</p><br/>
+        <h1>Votes</h1>
+      </header>
+      <article class="container__content">
+      <p>Users can currently vote every 24 hours for each bot. The /votes endpoint for your bot (the one you use via getVotes) only indexes the last 1000 votes. Please implement the webhook instead if you plan to process over 1000 votes.  </p>
+      <p class="subtitleapi">Our current Rules on using our voting API. </p>
+      <p style="color:#F04747 !important;">Unacceptable use of our API (breaking these rules will result in appropriate punishments):</p>
+      <ul class="libraries">
+        <li>"Vote locking" a large percentage AND/OR majority of your bots commands AND/OR features.</li>
+        <li>Punishing users of your bot AND/OR community for not voting.</li>
+      </ul>
+      <p style="color: #43B581;">Acceptable use of our API:</p>
+      <ul class="libraries">
+        <li>Reward users of your bot for voting.</li>
+        <li>Try to limit voting required commands to 2-3</li>
+      </ul>
+      <p style="color:#F04747 !important;">Consequences of breaking these rules:</p>
+      <ul class="libraries">
+        <li>First Offence - A stern warning from one of our beautiful moderators and possible reverting of bot votes.</li>
+        <li>Second Offence - If you haven't changed your ways after your first offence, or you are caught breaking these rules a second time, we will lock your access to the voting endpoint(s) and reset your votes. </li>
+      </ul>
+      <p>We reserve the right to not follow these consequences in the exact order they are laid out here and take action how we see fit dependant on the scenario</p>
+      </article>
+    </section>
+    <section data-page="votes-multiplier" class="container__main">
+      <header class="container__header">
+        <h1>Voting Multiplier</h1>
+      </header>
+      <article class="container__content">
+      <p>To help give all bots a better chance to fight for the top spots we are now introducing vote multipliers. Votes count double on the weekend! On Fridays, Saturdays and Sundays, users votes count as two votes each.</p>
+      <p class="subtitleapi">Checking if the multiplier is live</p>
+      <p>Use this endpoint to find out if the multiplier is live so you can increase your bot's voting rewards for the weekend</p>
+      <span class="highlightedThing _green">GET</span><span class="highlightGuide"><code>/weekend</code></span>
+      <p class="subtitleapi">Example Response</p>
+      <code>{is_weekend: true}</code>
+      <p>Returns in JSON form a bool for the key <code>is_weekend</code></p>
+</article>
+    </section>
+    <section data-page="mybots" class="container__main">
+      <header class="container__header">
+        <h1>My Bots</h1>
+      </header>
+      <article class="container__content">
+        <p>Here are your bots. You can view your API key here and other neat things!</p>
+      </article>
+      <article class="container__content">
+        <p><a href="https://discordapp.com/oauth2/authorize?client_id=264434993625956352&scope=identify&state=L2FwaS9kb2NzI215Ym90cw==&redirect_uri=https%3A%2F%2Fdiscordbots.org%2Flogin%2Fcallback&response_type=code">Log in</a> to view your bots</p>
+        <table class="exampleTable api_key_viewer">
+          <tr class="trHeader">
+            <th><span class="botname"></span> API Key</th>
+          </tr>
+          <tr>
+            <td><code class="api_token"></code></td>
+          </tr>
+          <tr>
+            <td><a href="" class="api_token_regen">Regen token</a></td>
+          </tr>
+          <tr class="api_webhook_tester_container">
+            <td><a class="api_webhook_tester">Test webhook</a></td>
+          </tr>
+        </table>
+      </article>
+    </section>
+    <section data-page="dotnetlib" class="container__main">
+     <header class="container__header">
+        <h1>C# / .NET Library</h1>
+      </header>
+            <article class="container__content">
+        <p>This is our official .NET Library for discordbots.org, if you have any issues please submit an issue on our github. </p>
+        <ul class="libraries"><li><a href="https://github.com/DiscordBotList/DBL-dotnet-Library"><p>Github Link</p></a></li></ul>
+      </article>
+             <header class="container__header">
+        <h1>Installation</h1>
+      </header>
+      <article class="container__content">
+      <p class="subtitleapi">Nuget</p>
+      <p>If you're using Nuget you can use find it with the ID <code>DiscordBotsList.Api</code> or use</p><pre>Install-Package DiscordBotsList.Api</pre>
+      </article>
+           <header class="container__header">
+        <h1>Usage</h1>
+      </header>
+      <article class="container__content">
+      <p class="subsubtitleapi">Unauthorized API Usage</p>
+      <p class="subtitleapi">Setting Up</p>
+      <pre>DiscordBotListApi DblApi = new DiscordBotListApi();</pre>
+      <p class="subtitleapi">Getting Bots</p>
+      <pre>//                            discord id
+IBot bot = DblApi.GetBotAsync(160105994217586689);</pre>
+      <p class="subtitleapi">Getting Users</p>
+      <pre>//                              discord id
+IUser bot = DblApi.GetUserAsync(121919449996460033);</pre>
+      <p class="subsubtitleapi">Authorized API Usage</p>
+            <p class="subtitleapi">Setting Up</p>
+      <pre>AuthDiscordBotListApi DblApi = new AuthDiscordBotListApi(BOT_DISCORD_ID, YOUR_TOKEN);</pre>
+       <p class="subtitleapi">Updating Stats</p>
+      <pre>ISelfBot me = await DblApi.GetMeAsync();
+// Update stats sharded   indexShard shardCount shards
+await me.UpdateStatsAsync(24,        50,        new[] { 12, 421, 62, 241, 524, 534 });
+// Update stats           guildCount
+await me.UpdateStatsAsync(2133);</pre>
+   <p class="subtitleapi">Widgets</p>
+      <pre>string widgetUrl = new SmallWidgetOptions()
+	.SetType(WidgetType.OWNER)
+	.SetLeftColor(255, 255, 255);
+	.Build(160105994217586689);</pre>
+	<p>Generates the following: </p>
+	<img src="https://camo.githubusercontent.com/32783ef6b26ffe1a732b96a63d5dfc63608ef8d9/68747470733a2f2f646973636f7264626f74732e6f72672f6170692f7769646765742f7374617475732f3136303130353939343231373538363638392e7376673f6c656674636f6c6f723d464646464646">
+      </article>
+       <header class="container__header">
+            <h1>Unofficial Libraries</h1>
+         </header>
+            <article class="container__content">
+            <p>We currently don't endorse any unofficial libraries for the API, but if you think you could contribute to our current libraries check out our <a href="https://github.com/DiscordBotList">github repos</a> and maybe submit a PR. If you think we should endorse your unofficial library for a language we don't already support hit us up at <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f1828481819e8385b1959882929e8395939e8582df9e8396">[email&#160;protected]</a></code> or DM a Website Administrator</p>
+            </article>
+    </section>
+    <section data-page="webhooks" class="container__main">
+      <header class="container__header">
+        <h1>Webhooks</h1>
+      </header>
+      <article class="container__content">
+        <p>Instead of requesting our API to see the users who have voted for your bot, we now have webhooks! Webhooks will send a post request to a URL of your choice when your bot has been voted for.</p>
+      </article>
+      <header class="container__header">
+        <h1>Getting Started</h1>
+      </header>
+      <article class="container__content">
+        <p>Start by setting up your webhook URL in the edit form of your bot on this site, it can be found at <code>https://discordbots.org/bot/:ID/edit</code> once you have entered the URL you want the webhook to be sent to, you're all set! If you need help setting up webhooks inside of your bot don't be afraid to ask in our discord server in our #api channel.</p>
+      </article>
+      <header class="container__header">
+        <h1>Verifying the request</h1>
+      </header>
+      <article class="container__content">
+        <p>On the edit page you can see another input for "Authorization". Here you shall provide a "password" that you can check for.</p>
+        <p>To verify requests are coming from us, look for the value in the <code>Authorization</code> header and make sure it is the same as the value you provided in the form.</p>
+      </article>
+       <header class="container__header">
+        <h1>Data Format</h1>
+      </header>
+      <article class="container__content">
+        <p>The format of the data your webhook URL will receive in a POST request</p>
+        <table class="exampleTable">
+      <tr class="trHeader">
+        <th colspan="4">JSON Params</th>
+      </tr>
+       <tr class="trSubHeader">
+            <td>Field</td>
+            <td>Type</td>
+            <td>Description</td>
+          </tr>
+      <tr>
+          <td>bot</td>
+          <td>Snowflake</td>
+          <td>ID of the bot that received a vote</td>
+      </tr>
+      <tr>
+          <td>user</td>
+          <td>Snowflake</td>
+          <td>ID of the user who voted</td>
+      </tr>
+      <tr>
+          <td>type</td>
+          <td>String</td>
+          <td>The type of the vote (should always be "upvote" except when using the test button it's "test")</td>
+      </tr>
+      <tr>
+          <td>isWeekend</td>
+          <td>Boolean</td>
+          <td>Whether the weekend multiplier is in effect, meaning users votes count as two</td>
+      </tr>
+      <tr>
+        <td>query?</td>
+        <td>String</td>
+        <td>Query string params found on the <code>/bot/:ID/vote</code> page. Example: <code>?a=1&b=2</code></td>
+      </tr>
+      </table>
+      </article>
+    </section>
+  </section>
+  <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      function request(opts, callback){
+          var xhr = new XMLHttpRequest()
+          xhr.onreadystatechange = function(){
+              if(xhr.readyState != 4) return
+              if (xhr.status >= 200 && xhr.status < 400) {
+                  return callback(null, xhr.getResponseHeader("Content-Type") != null && xhr.getResponseHeader("Content-Type").indexOf("application/json") != -1 ? JSON.parse(xhr.responseText) : xhr.responseText, xhr)
+              }
+              var msg = xhr.responseText || "Error"
+              callback(Error(msg), null, xhr)
+          }
+          xhr.open(opts.method || "GET", opts.url)
+          for (var key in opts.headers) {
+              xhr.setRequestHeader(key, opts.headers[key])
+          }
+          xhr.send(opts.data)
+          return xhr
+      }
+      function testWebhook(id){
+        request({url: window.location.protocol+"//"+window.location.hostname+"/api/testWebhook", method: "POST", data:JSON.stringify({bot: id, type: "test", query: '?test=data&notRandomNumber=8'}), headers:{"Content-Type": "application/json"}}, function(err, res){
+          if(err) return console.error(err);
+          alert("Webhook tested! This may take a few seconds");
+        });
+      }
+      function closeModal(el) {
+          el.parentNode.classList.remove('is-active');
+      }
+  </script>
+<!-- Venatus Market v3 -->
+<script>
+(function() {
+document.write('<div id="vmv3-ad-manager" style="display:none"></div>');
+document
+.getElementById("vmv3-ad-manager")
+.innerHTML = '<iframe id="vmv3-frm" src="javascript:\'<html><body></body></html>\'" width="0" height="0" data-mode="scan" data-site-id="5b608a2046e0fb0001330d9b"></iframe>';
+var loaderFrame = document.getElementById("vmv3-frm");
+var loaderFrameWindow = loaderFrame.contentWindow ? loaderFrame.contentWindow : loaderFrame.contentDocument;
+loaderFrameWindow.document.open();
+loaderFrameWindow.document.write('<scr'+'ipt src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" async>'+'</scr'+'ipt>');
+loaderFrameWindow.document.close();
+})();
+</script>
+<!-- / Venatus Market v3 -->
+<script>
+    console.log("GA Loaded");
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-98194944-1', 'auto');
+    ga('send', 'pageview');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '320184805116299');
+    fbq('track', 'PageView');
+</script>
+<script>
+    /**
+     * Function that tracks a click on an outbound link in Analytics.
+     * This function takes a valid URL string as an argument, and uses that URL string
+     * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+     * using 'navigator.sendBeacon' in browser that support it.
+     */
+    var trackOutboundLink = function(url) {
+        ga('send', 'event', 'outbound', 'click', url, {
+            'transport': 'beacon',
+            'hitCallback': function(){document.location = url;}
+        });
+    };
+    var trackCampaignImpression = function(name, location) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'impression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignBotPageImpression = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'botPageImpression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignServerJoin = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'serverJoin',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackCampaignWebClick = function(name, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "campaign-"+name,
+            eventAction: 'webClick',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackRegularServerJoin = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'serverJoin',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackRegularWebClick = function(name, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'webClick',
+            eventLabel: label
+        });
+    }
+    var trackRegularBotPageImpression = function(name) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "organic-"+name,
+            eventAction: 'botPageImpression',
+            eventLabel: (window.location.href === undefined? "unknown" : window.location.href)
+        });
+    };
+    var trackUpvote = function(id, label) {
+        if(label === undefined) {
+            label = (window.location.href === undefined? "unknown" : window.location.href);
+        }
+        ga('send', {
+            hitType: 'event',
+            eventCategory: "upvote",
+            eventAction: id,
+            eventLabel: label
+        });
+    }
+    var myConfObj = {
+        iframeMouseOver : false
+    }
+    window.addEventListener('blur',function(){
+        if(myConfObj.iframeMouseOver){
+            if(window.campaign === undefined) {
+                trackRegularWebClick(window.botName, 'iframe');
+            } else {
+                trackCampaignWebClick(window.campaign, 'iframe');
+            }
+        }
+    });
+    if( document.getElementById('botiframe')) {
+        document.getElementById('botiframe').addEventListener('mouseover', function () {
+            myConfObj.iframeMouseOver = true;
+        });
+        document.getElementById('botiframe').addEventListener('mouseout', function () {
+            myConfObj.iframeMouseOver = false;
+        });
+    }
+    var setCampaignIframe = function(campaign) {
+        window.campaign = campaign;
+    }
+    var setRegularIframe = function(botName) {
+        window.botName = botName;
+    }
+</script>
+<script>
+    var outlinkDuplicate = function (id) {
+        document.getElementById(id).click();
+    }
+</script>
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!localStorage.getItem('HasSeenAnnoyingPopup')) {
+            var modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = '<div class="modal-background" style="z-index: -50;"></div>\
+                <div class="modal-content" style="background-color: white; padding: 20px;">\
+                    <p style="margin-bottom: 15px;">We use cookies to understand how you use our site and to improve your experience. This includes personalizing content and advertising. To learn more, <a href="https://discordbots.org/terms"><strong>click here</strong></a>. By continuing to use our site, you accept our use of cookies, revised Privacy Policy and Terms of Use.</p>\
+                    <div></div>\
+                    <button style="background-color: #2E4492!important" class="button colorr is-primary" onClick="this.parentNode.parentNode.classList.remove(\'is-active\');localStorage.setItem(\'HasSeenAnnoyingPopup\', true)">Close</button>\
+                </div>';
+            modal.classList.add('is-active');
+            document.body.appendChild(modal);
+        }
+    });
+</script> -->
+</body>
+</html>
+<!-- Start of dbots Zendesk Widget script -->
+<script id="ze-snippet" src="../static.zdassets.com/ekr/snippet.js"> </script>
+<!-- End of dbots Zendesk Widget script -->
