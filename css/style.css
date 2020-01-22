@@ -51,6 +51,22 @@ html {
 @-ms-viewport {
   width: device-width; }
 
+@media all and (min-width: 480px) and (max-width: 800px) {
+    #container {width: auto; max-width: 800px;}
+    #main {width: 70%; float: left;}
+    #sidebar {width: 30%; float: left; margin-bottom: 10px;}
+    #pub {width: 30%; margin-left: 70%; float: none;} } @media all and (min-width: 400px) and (max-width: 480px) {
+    #container {width: auto; max-width: 480px;}
+    #main, #sidebar, #pub {width: 100%; float: none;}
+    h1 {position: absolute; top: 0; height: 30px; width: 100%;}
+    #sidebar {position: absolute; top: 40px; height: 40px;}
+    #sidebar p {display: none;}
+    #sidebar ul {padding: 0; margin-top: 10px; overflow: hidden;}
+    #sidebar ul li {display: inline; font-size: 15px;}
+    #main {position: absolute; top: 80px;}
+    #pub, #footer {display: none;}
+}
+
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
